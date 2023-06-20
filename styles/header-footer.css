@@ -1,0 +1,15 @@
+header div div[class*="bgContainer"] div[class*="bg1"],header div div[class*="bgContainer"] div[class*="bg2"] {
+    background-color: #FFF;
+}
+
+ul[class*="titleBarNavStyles-items"] {
+    justify-content: center;
+}
+
+a[class*="titleBarNavStyles-link"] {
+    color: #000;
+}
+
+.css-1ryuobj-buttonUtils-buttonIcon-buttonUtils-buttonIcon-titleBarStyles-button.css-1ryuobj-buttonUtils-buttonIcon-buttonUtils-buttonIcon-titleBarStyles-button {
+    color: #240F6E;
+}
