@@ -117,8 +117,18 @@ p[class*="Banner-styles-description"] {
     margin-bottom: 32px;
 }
 
+div[class*="SectionOneColumn"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div[class*="SectionOneColumn"] > div {
+    height: auto;
+}
 
-
+div[class*="SectionOneColumn"] > div > div {
+    height: 100%;
+}
 
 
 </style>
