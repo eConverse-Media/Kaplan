@@ -13,7 +13,6 @@ onVanillaReady(function () {
    styleSheet = themeHeader.querySelector("#stylesheet");
 
 
-    console.log(styleSheet);
 
     setTimeout(function(){
     var banner = document.documentElement.querySelector('div[class*="Banner-styles-root"]') 
