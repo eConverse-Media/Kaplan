@@ -1,0 +1,319 @@
+
+
+<style id="stylesheet" rel="stylesheet" type="text/css">
+
+
+    /* CSS Variables */
+:root {
+    --core-purple: #240F6E;
+    --neutrals-white: #fff;
+    --neutrals-light-grey: #efefef;
+    --neutrals-grey: #d9d9d8;
+    --neutrals-darkest-medium-grey: #615f66;
+    --accent-blue-1: #082ECF;
+    --accent-pink-2: #DE1B90;
+    --neutrals-black-grey: #222121;
+    --accent-red-1: #9e1539;
+    --accent-green-1: #00491e;
+}
+
+/* general body classes */
+
+div[class*="HomeWidgetContainer-styles-root"] {
+    background: transparent;
+}
+
+.bg-grey {
+    background-color: #d9d9d9;
+    padding: 60px 0;
+    margin: 0;
+}
+
+.bg-grey::before,.bg-grey::after {
+    content: '';
+    height: 248px;
+    width: 248px;
+    position: absolute;
+}
+
+
+.bg-grey::before {
+    background-image: url('https://us.v-cdn.net/6037957/uploads/42CY6T3WVIOX/bg-grey-graphic-a.png');  
+    bottom: 168px;
+    right: calc(50% - 900px);
+    background-size: cover;
+}
+
+.bg-grey::after {
+      background-image: url('https://us.v-cdn.net/6037957/uploads/HS97AH5YXNJN/bg-grey-graphic-b.png');
+    top: 165px;
+    left: calc(50% - 900px);
+    background-size: cover;
+}
+
+
+/* Categories */
+
+div[class*="homeWidgetItem-iconWrap"] {
+    height: 52px;
+    max-height: 52px;
+}
+
+div[class*="homeWidgetItem-iconWrap"] img {
+    height: 52px;
+    max-height: 52px;
+}
+/* Adding the styling to two grey */
+html body
+div[class*="twoColumnLayout-WidgetLayout"]  {
+    background: #efefef;
+    margin-top: 0 !important;
+    padding-top: 40px;
+    margin-bottom: 0;
+}
+
+
+div[class*="twoColumnLayout-WidgetLayout"] div[class*="HomeWidgetContainer-styles-root"] {
+    margin: 0 !important;
+    padding: 16px 0;
+}
+
+/* Styling for Discussions on Homepage */
+
+div[class*="tab-browse-tabList"] {
+    position: relative;
+    margin-left: 4px;
+}
+
+div[class*="tab-browse-tabList"]::after {
+    content: '';
+    height: 3px;
+    width: 417px;
+    position: absolute;
+    bottom: -1px;
+    background: var(--neutrals-grey);
+    left: 0px;
+}
+
+div[class*="tab-browse-tabList"] button {
+    z-index: 5;
+}
+
+button[class*="tab-browse-isActive"]::before {
+    background-color: var(--neutrals-black-grey);
+    width: 100%;
+    left: 0;
+}
+
+ div[class*="twoColumnLayout-mainColumn"] .panelWidget h2 {
+    color: #000;
+}
+
+ div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat {
+    background: var(--neutrals-white);
+    border: 1px solid var(--neutrals-light-grey);
+    padding: 16px;
+    padding-left: 24px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-family: Open Sans;
+}
+
+
+li.pageBoxNoCompat span[class*="tag"] {
+    border: 1px solid var(--core-purple);
+    color: var(--core-purple);
+}
+
+
+li.pageBoxNoCompat span[class*="tag"] {
+    border: 1px solid var(--core-purple);
+    background: var(--core-purple);
+    color: white;
+}
+
+li.pageBoxNoCompat span.tag-qna-unanswered,
+li.pageBoxNoCompat span.tag-announcement {
+    background: var(--core-purple);
+    color: var(--neutrals-white);
+}
+
+div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat h3 {
+    margin-bottom: 8px;
+}
+
+ div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat:last-of-type {
+    margin-bottom: 0;
+}
+
+
+ div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat::before,  div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat::after {
+    border-color: transparent;
+    display: none;
+}
+ /* Quicklinks styling */
+
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(2) > div {
+    background-color: var(--neutrals-white);
+    border-radius: 30px 0 0 0;
+    padding: 24px;
+}
+
+/* Styling for who's online on homepage */
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div {
+    background-color: var(--neutrals-black-grey);
+    border-radius: 30px 0 0 0;
+    padding: 24px;
+}
+
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div h5 {
+    color: var(--neutrals-white);
+    font-weight: 300;
+}
+
+
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4)  span[class*="PageHeadingBox-styles-titleCount"] {
+    color:var(--neutrals-white);
+}
+
+ /* Quicklinks styling */
+
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(5) > div {
+    background-color: var(--neutrals-white);
+    border-radius: 0px 0px 30px 0px;
+    padding: 24px;
+}
+
+/* Styling for who's online on homepage */
+button[class*="newPostMenuStyles-button"] {
+    width: 100%;
+    max-width: unset !important;
+}
+
+button[class*="newPostMenuStyles-button"]  div[class*="buttonContents"] {
+    width: initial !important;
+}
+
+
+    /* Hero Image */
+#hero-image, #hero-graphic1 {
+    position: absolute;
+     right: 0;
+     bottom: 0;
+}
+
+#hero-graphic2 {
+    position: absolute;
+     left: 0;
+     bottom: 0;
+}
+
+#hero-image {
+    z-index: 1;
+}
+
+
+
+/* Banner */
+div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] {
+    padding: 69px 0px 70px;
+}
+
+div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] {
+    padding: 69px 0px 70px;
+}
+
+
+div[class*="Banner-styles-root"] svg[class*="defaultBannerSVG"] {
+    display: none;
+}
+
+
+div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] h1.heading.heading-1 {
+    font-family: Merriweather;
+    font-weight: 300;
+    line-height: 130%;
+    font-size: 38px;
+    margin-bottom: 16px;
+}
+
+div[class*="Banner-styles-searchContainer"] {
+    height: 52px;
+    margin-top: 0;
+} 
+
+
+div[class*="Banner-styles-searchContainer"]
+div[class*="SearchBar-styles-main"]{
+    width: 100%;
+    max-width: unset;
+    margin-left: 20px;
+}
+
+
+div[class*="Banner-styles-searchContainer"]
+button#button-5 {
+    color:#222121;
+    display: block;
+}
+
+
+div[class*="Banner-styles-searchContainer"]
+button#button-5 svg {
+    font-size: 22px;
+    height: 22px;
+    width: 22px;
+    margin-top: 0;
+}
+
+div[class*="SearchBar-styles-scope"] button[class*="SearchBar-styles-scopeToggle"], 
+div[class*="SearchBar-styles-scope"]{
+    display: none;
+}
+
+
+
+div[class*="Banner-styles-descriptionWrap"] {
+    margin-bottom: 0;
+}
+
+p[class*="Banner-styles-description"] {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    line-height: 160%;
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+
+div[class*="SectionOneColumn"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div[class*="SectionOneColumn"] > div {
+    height: auto;
+}
+
+div[class*="SectionOneColumn"] > div > div {
+    height: 100%;
+}
+
+
+.meBox-buttonContent svg path,
+.flyouts button#flyout-24-handle span[class*="subcommunityChooser-toggle"] svg path,
+.flyouts button#flyout-24-handle span[class*="subcommunityChooser-toggle"] svg polygon
+ {
+    fill: var(--core-purple);
+}
+
+/*leaderboard widget*/
+
+.css-o8mxt-LeaderboardWidget-styles-cell {
+    min-width: unset;
+}
+
+div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
+    max-height: unset;
+}
+
+</style>
