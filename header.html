@@ -330,9 +330,7 @@ table[class*="LeaderboardWidget-styles-table"] tr {
     position: relative;
 }
 
-table[class*="LeaderboardWidget-styles-table"] tr td {
 
-}
 
 table[class*="LeaderboardWidget-styles-table"] tr td:nth-of-type(2) {
     position: absolute;
@@ -348,7 +346,7 @@ table[class*="LeaderboardWidget-styles-table"] tr td:nth-of-type(2) {
     color: var(--core-purple);
 }
 
-table[class*="LeaderboardWidget-styles-table"] tr:::before {
+table[class*="LeaderboardWidget-styles-table"] tr::before {
     width: 18px;
     height: 18px;
     border-radius: 30px;
@@ -439,5 +437,45 @@ a[class*="LeaderboardWidget-styles-linkStyles"] {
         height: 600px;
     }
 }
+@media (max-width: 1060px) {
 
+div[class*="SectionOneColumn"] {
+    flex-direction: column;
+}
+
+}
+
+@media (max-width: 932px) {
+    
+div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-type(2) > div {
+    background-color: var(--neutrals-white);
+    border-radius: 30px 0 0 0;
+    padding: 24px;
+}
+
+/* Styling for who's online on homepage */
+div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-type(4) > div {
+    background-color: var(--neutrals-black-grey);
+    border-radius: 30px 0 0 0;
+    padding: 24px;
+}
+
+div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-type(4) > div h2 {
+    color: var(--neutrals-white);
+    font-weight: 300;
+}
+
+
+div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-type(4)  span[class*="PageHeadingBox-styles-titleCount"] {
+    color:var(--neutrals-white);
+}
+
+ /* Quicklinks styling */
+
+div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-type(5) > div {
+    background-color: var(--neutrals-white);
+    border-radius: 0px 0px 30px 0px;
+    padding: 24px;
+}
+}
 </style>
