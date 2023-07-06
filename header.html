@@ -15,6 +15,10 @@
     --neutrals-black-grey: #222121;
     --accent-red-1: #9e1539;
     --accent-green-1: #00491e;
+    --kaplan-deep-blue-purple: #082ECF;
+    --kaplan-core-purple-1: #240F6E;
+    --kaplan-core-purple-3: #7c6ca7;
+    --kaplan-regular-blue-purple: #005DE8;
 }
 
 /* general body classes */
@@ -162,10 +166,22 @@ div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat h3 {
 }
  /* Quicklinks styling */
 
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(2) > div {
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(2) > div  {
     background-color: var(--neutrals-white);
-    border-radius: 30px 0 0 0;
+    border-radius: 0 0 30px 0;
     padding: 24px;
+}
+
+div.Panel-main div[class*="quickLinks"] .pageHeadingBox  {
+    background-color: var(--neutrals-white);
+    border-radius: 0;
+    padding: 24px;
+}
+
+
+div.Panel-main div[class*="quickLinks"] div[class*="PageBox-boxClass"]  {
+    background-color: var(--neutrals-white);
+    border-radius: 0 0 30px 0;
 }
 
 /* Styling for who's online on homepage */
@@ -331,7 +347,6 @@ table[class*="LeaderboardWidget-styles-table"] tr {
 }
 
 
-
 table[class*="LeaderboardWidget-styles-table"] tr td:nth-of-type(2) {
     position: absolute;
     bottom: 0;
@@ -429,6 +444,264 @@ a[class*="LeaderboardWidget-styles-linkStyles"] {
     color: #000;
     margin-top: -10px;
 }
+
+/* Interior Pages */
+
+.Frame {
+    background: var(--neutrals-light-grey);
+}
+
+/* Default anchor links */
+.BreadcrumbsBox .Breadcrumbs a,
+a.selectBox-toggle,
+a {
+    color: var(--core-purple);
+    transition: 0.3s;
+}
+
+.BreadcrumbsBox .Breadcrumbs a:hover,
+.BreadcrumbsBox .Breadcrumbs a:focus,
+a.selectBox-toggle:hover,
+a.selectBox-toggle:focus,
+a:hover,
+a:focus {
+color: #000;
+transition: 0.3s;
+}
+
+/* Sidebar */
+.Frame .Panel .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox  {
+    background-color: var(--neutrals-white);
+    border-radius: 0;
+    padding: 24px;
+    padding-bottom: 0;
+}
+
+div.Panel-main .pageBox  div[class*="quickLinks"] div[class*="PageBox-boxClass"]  {
+    background-color: var(--neutrals-white);
+    border-radius: 0 0 0 30px;
+    padding: 24px;
+    padding-top: 0;
+}
+
+.Frame .Box.Tags .Panel .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox {
+    background-color: var(--neutrals-white);
+    border-radius: 0 30px 0 0;
+    padding: 24px;
+    padding-bottom: 0;
+}
+ 
+.Frame  .Panel  .Box.Tags .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox {
+    border-radius: 0 30px 0 0;
+    padding: 24px;
+    padding-bottom: 0;
+}
+
+div.Panel-main .pageBox .Box.Tags ul.TagCloud {
+    padding: 24px !important;
+    padding-top: 0 !important;
+    background-color: var(--neutrals-white);
+    margin: 0;
+}
+
+
+div.Panel-main .pageBox .Box.Tags ul.TagCloud li {
+    border: 0;
+}
+
+
+div.Panel-main .pageBox .Box.Tags ul.TagCloud li a {
+    border-color: var(--core-purple);
+    color: var(--core-purple);
+    transition: 0.3s;
+}
+
+
+div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:hover,
+div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus  {
+    background-color: var(--core-purple);
+    color: var(--neutrals-white);
+    transition: 0.3s;
+}
+
+div.Panel-main .pageBox .Box.Tags ul.TagCloud li a .Count {
+    transition: 0.3s;
+}
+
+div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:hover .Count,
+div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
+    transition: 0.3s;
+    background-color:var(--neutrals-white);
+    color:var(--core-purple);
+}
+
+
+.TagCloud li.TagCloud-Item.TagCloud-Item.TagCloud-Item a .Count {
+    background-color: var(--core-purple);
+}
+
+
+
+
+/* Styling for who's online on homepage */
+.Frame .Panel #WhosOnline .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox {
+    background-color: var(--neutrals-black-grey);
+    border-radius: 30px 0 0 0;
+    padding: 24px;
+    padding-bottom: 0;
+}
+
+.Frame .Panel #WhosOnline .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox .Count {
+    background-color: transparent
+}
+
+.Panel.Panel-main #WhosOnline h4 {
+    color: var(--neutrals-white);
+    font-weight: 300;
+}
+
+
+.Panel.Panel-main #WhosOnline .PhotoGrid {
+    margin: 0 !important;
+    background-color: var(--neutrals-black-grey);
+    width: 100% !important;
+    padding: 24px;
+    padding-top: 0;
+}
+
+.Frame ul.media-list.pageBox li::before,
+.Frame ul.media-list.pageBox li::after {
+    content: none;
+}
+
+.Frame ul.media-list.pageBox li {
+    background-color: var(--neutrals-white);
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 1px solid var(--neutrals-white);
+}
+
+.Frame ul.media-list.pageBox li:last-of-type {
+    margin-bottom: 0;
+}
+
+
+.Frame ul.media-list.pageBox li .Title a {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.Frame .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox h2 {
+    font-family: Merriweather;
+    font-size: 34px;
+    line-height: 130%;
+    font-weight: 300;
+    color: #000;
+}
+
+/* Global Styles */
+
+
+/* Nav */
+
+.headerNavigation ul li a {
+    font-family: 'Open Sans';
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0.13px;
+
+}
+
+/* Buttons */
+
+.Buttons a.Button {
+    display: flex;
+    border: 2px solid var(--core-purple);
+    background: transparent;
+    color: var(--core-purple);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: 'Open Sans';
+    border-radius: 96px;
+    transition: 0.3s;
+}
+
+
+.Buttons a.Button:not([disabled]):hover,
+.Buttons a.Button:not([disabled]):focus {
+    display: flex;
+    border: 2px solid var(--core-purple);
+    background: transparent;
+    color: var(--core-purple);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: 'Open Sans';
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.Buttons a.Button:not([disabled]):active {
+    display: flex;
+    border: 2px solid var(--kaplan-core-purple-3);
+    background: var(--kaplan-core-purple-3);
+    color: var(--neutrals-white);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: 'Open Sans';
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+
+ a.Button.Primary, .groupToolbar a.Button:not([disabled]).Primary
+ {
+    background-color: var(--kaplan-core-purple-1);
+    color: var(--neutrals-white);
+    border-radius: 96px;
+    transition: 0.3s;
+}
+
+a.Button.Primary:hover:not([disabled]), a.Button.Primary:focus:not([disabled]), .groupToolbar a.Button.Primary:hover:not([disabled]), .groupToolbar a.Button.Primary:focus:not([disabled])
+ {
+    background-color: var(--kaplan-core-purple-1);
+    color: var(--neutrals-white);
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+a.Button.Primary:active:not([disabled]), .groupToolbar a.Button.Primary:active:not([disabled])
+ {
+    background-color: var(--kaplan-core-purple-3);
+    border-color: var(--kaplan-core-purple-3);
+    transition: 0.3s;
+}
+
+a.MoreWrap, .MoreWrap a, .MorePager a, .more.More, .MoreWrap a.more.More {
+    color: var(--kaplan-core-purple-1);
+    text-decoration: underline;
+
+}
+
+a.MoreWrap:hover, .MoreWrap a:hover, .MorePager a:hover, .more.More:hover, .MoreWrap a.more.More:hover {
+    color: var(--kaplan-deep-blue-purple);
+}
+
+a.MoreWrap:hover, .MoreWrap a:hover, .MorePager a:hover, .more.More:hover, .MoreWrap a.more.More:hover {
+    color: var(--kaplan-regular-blue-purple);
+}
+
+a, a:hover, a:focus, a:active {
+    transition: 0.3s;
+}
+
+
 
 /* responsive */
 
