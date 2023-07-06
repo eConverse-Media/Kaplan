@@ -240,6 +240,40 @@ button[class*="newPostMenuStyles-button"]  div[class*="buttonContents"] {
 
 
 /* Banner */
+
+div[class*="Banner-styles-root"] {
+    background-color: rgb(29, 12, 88);
+    position: relative;
+}
+
+div[class*="Banner-styles-root"]::before {
+    content: '';
+    width: 340px;
+    height: 482px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://us.v-cdn.net/6037957/uploads/3WUCCCU5B39X/hero-graphic-mask.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 1;
+    background-position: bottom center;
+}
+
+div[class*="Banner-styles-root"]::after {
+    content: '';
+width: 296px;
+height: 297px;
+position: absolute;
+left: 0;
+bottom: 0;
+background-image: url('https://us.v-cdn.net/6037957/uploads/RX2E8OP87ORC/hero-graphic-2.png');
+background-size: cover;
+background-repeat: no-repeat;
+background-size: 100%;
+background-position: bottom;
+}
+
 div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] {
     padding: 69px 0px 70px;
 }
@@ -536,10 +570,33 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
 }
 
 
-.TagCloud li.TagCloud-Item.TagCloud-Item.TagCloud-Item a .Count {
+.TagCloud li.TagCloud-Item.TagCloud-Item.TagCloud-Item a .Count, .PanelInfo.PanelCategories li .Count {
     background-color: var(--core-purple);
 }
 
+.PanelInfo.PanelCategories li a:hover .Count {
+    background-color: var(--neutrals-white);
+    color: var(--core-purple);
+}
+
+.Section-Discussion .Panel .pageBox ul.pageBox.PanelCategories,
+.Panel .pageBox .BoxCategories .PanelInfo.PanelCategories,/* profile badges selector */
+.Profile.editor-active .Panel.Panel-main .pageBox div:nth-of-type(5),
+.Profile:not(.editor-active) .Panel.Panel-main .pageBox div:nth-of-type(3),
+.Profile .Panel.Panel-main .pageBox ul.FilterMenu
+ {
+    padding: 24px;
+    padding-top: 0;
+    border-radius: 0 0 30px 0;
+    background-color: var(--neutrals-white);
+}
+.PanelInfo.PanelCategories .Active {
+    background: transparent;
+}
+
+.PanelInfo.PanelCategories li, .PanelInfo.PanelCategories li:first-child {
+    border: 0;
+}
 
 
 
@@ -574,12 +631,28 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
     content: none;
 }
 
-.Frame ul.media-list.pageBox li {
+.Frame ul.media-list.pageBox li,
+.Section-DiscussionList .Frame ul.Discussions li.ItemDiscussion, .MessageList.Discussion,
+.Section-Discussion .Content .Comments li.ItemComment .Comment,
+body.Profile div.Profile div.About.P section {
     background-color: var(--neutrals-white);
     padding: 16px;
     margin-bottom: 16px;
     border-radius: 10px;
     border: 1px solid var(--neutrals-white);
+}
+
+.Section-DiscussionList .Frame ul.Discussions li.ItemDiscussion::before, .Section-DiscussionList .Frame ul.Discussions li.ItemDiscussion::after,
+.MessageList.Discussion::before,
+.MessageList.Discussion::after,
+.Comments li.ItemComent::before,
+.Section-Discussion .Content .Comments li.ItemComment::after,
+.Section-Discussion .Content .Comments li.ItemComment::before,
+.Section-Discussion .Content .pageBox .pageBox::before,
+.Section-Discussion .Content .pageBox .pageBox::after,
+.Section-Discussion .Content .Comments li.ItemComment .Comment::after
+ {
+    content: none;
 }
 
 .Frame ul.media-list.pageBox li:last-of-type {
@@ -594,12 +667,32 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
     line-height: 150%;
 }
 
-.Frame .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox h2 {
+#vanilla-editor-root {
+    background: var(--neutrals-white);
+}
+
+/* Profile */
+
+body.Profile div.Profile div.About section h2 {
+    font-family: Merriweather;
+    line-height: 130%;
+    font-weight: 300;
+    color: #000;
+}
+
+/* Default header Styling */
+.Frame .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox h2,.pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h1:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h2:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h3:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h4:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h5:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge [role="heading"]:not(.subtitle),
+.pageHeadingBox.pageHeadingBox.pageHeadingBox h1:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h2:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h3:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h4:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h5:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox [role="heading"]:not(.subtitle)
+ {
     font-family: Merriweather;
     font-size: 34px;
     line-height: 130%;
     font-weight: 300;
     color: #000;
+}
+
+.pageHeadingBox.pageHeadingBox.pageHeadingBox h1:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h2:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h3:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h4:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h5:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox [role="heading"]:not(.subtitle) {
+    font-size: 25px;
 }
 
 /* Global Styles */
@@ -618,7 +711,8 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
 
 /* Buttons */
 
-.Buttons a.Button {
+.Buttons a.Button,
+body.Section-Profile .ProfileOptions .Button-EditProfile:not([disabled]):not(.focus-visible) {
     display: flex;
     border: 2px solid var(--core-purple);
     background: transparent;
@@ -633,7 +727,9 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
 
 
 .Buttons a.Button:not([disabled]):hover,
-.Buttons a.Button:not([disabled]):focus {
+.Buttons a.Button:not([disabled]):focus,
+body.Section-Profile .ProfileOptions .Button-EditProfile:not([disabled]):not(.focus-visible):hover,
+body.Section-Profile .ProfileOptions .Button-EditProfile:not([disabled]):not(.focus-visible):focus {
     display: flex;
     border: 2px solid var(--core-purple);
     background: transparent;
@@ -646,7 +742,8 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
     transition: 0.3s;
 }
 
-.Buttons a.Button:not([disabled]):active {
+.Buttons a.Button:not([disabled]):active,
+body.Section-Profile .ProfileOptions .Button-EditProfile:not([disabled]):not(.focus-visible):active {
     display: flex;
     border: 2px solid var(--kaplan-core-purple-3);
     background: var(--kaplan-core-purple-3);
@@ -697,6 +794,51 @@ a.MoreWrap:hover, .MoreWrap a:hover, .MorePager a:hover, .more.More:hover, .More
     color: var(--kaplan-regular-blue-purple);
 }
 
+.FormWrapper .Buttons .Button.DraftButton:not([disabled]) {
+    display: initial;
+    border: 2px solid var(--core-purple);
+    background: transparent;
+    color: var(--core-purple);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: 'Open Sans';
+    border-radius: 96px;
+    transition: 0.3s;
+    max-width: 113.367px;
+    padding: 6px 24px;
+    margin-bottom: 4px;
+}
+
+
+html body .Pager a,html body .Pager span,
+html body .Pager .Previous,
+html body .Pager .Next {
+    display: flex;
+    background: var(--neutrals-white);
+    border-radius: 10px;
+}
+
+.FormWrapper .Buttons .Button.DraftButton:not([disabled]):hover,
+.FormWrapper .Buttons .Button.DraftButton:not([disabled]):focus {
+    display: initial;
+    border: 2px solid var(--core-purple);
+    background: transparent;
+    color: var(--core-purple);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: 'Open Sans';
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.FormWrapper .Buttons .Button.DraftButton:not([disabled]):active {
+    background-color: var(--kaplan-core-purple-3);
+    border-color: var(--kaplan-core-purple-3);
+    color: var(--neutrals-white);
+}
+
 a, a:hover, a:focus, a:active {
     transition: 0.3s;
 }
@@ -706,7 +848,7 @@ a, a:hover, a:focus, a:active {
 /* responsive */
 
 @media (max-width: 1360px) {
-    div[class*="Banner-styles-root"] {
+    body. div[class*="Banner-styles-root"] {
         height: 600px;
     }
 }
