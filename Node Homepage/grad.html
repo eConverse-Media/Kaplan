@@ -1,0 +1,119 @@
+<div class="top-card grad">
+    <div class="heading">
+        <h2>Graduate</h2>
+        <p>Ultrices nec habitant eleifend tristique odio.</p>
+<img id="grad-icon" src="https://us.v-cdn.net/6037957/uploads/C4RM4N1G2GL1/graduate.png" >
+    </div>
+    <div class="content">
+        <a href="#needsLink" class="coming-soon">
+            <span class="eyebrow">Coming Soon</span>
+            <h3>Law Students</h3>
+            <p>Details description go here on 2 lines</p>
+        </a>
+        <a href="#needsLink" class="coming-soon">
+            <span class="eyebrow">Coming Soon</span>
+            <h3>Family Nurse Practitioner</h3>
+            <p>Details description go here on 2 lines</p>
+        </a>
+    </div>
+</div>
+<style>
+    .top-card {
+    font-family: Open Sans;
+    line-height: 150%;
+    margin-right: 24px;
+    height: 100%;
+}
+
+.top-card .heading {
+    border-radius: 0 30px 0 0;
+    background-color: var(--core-purple);
+    padding: 12px 24px;
+    position: relative;
+    padding-right: 76px;
+}
+
+.top-card .heading h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--neutrals-white);
+    margin: 0;
+}
+
+.top-card .heading p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--neutrals-white);
+    margin: 0;
+}
+
+.top-card .heading img {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: var(--accent-pink-2);
+    color: var(--neutrals-white);
+    padding: 11px;
+}
+
+.top-card .content {
+    padding: 16px;
+    background-color: var(--neutrals-light-grey);
+    height: calc(100% - 120px);
+}
+
+.top-card a {
+    padding: 16px;
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+    background-color: var(--neutrals-white);
+
+}
+
+.eyebrow {
+    font-size: 12px;
+    color: var(--accent-blue-1);
+}
+
+.top-card a+a {
+    margin-top: 8px;
+}
+
+.top-card a.coming-soon {
+border: 1px solid var(--neutrals-grey );
+background: transparent;
+}
+
+.top-card a h3 {
+    font-size: 18px;
+    color: var(--neutrals-darkest-medium-grey);
+    font-weight: 300;
+    margin:4px 0;
+    font-family: Merriweather;
+}
+
+
+.top-card a p {
+    font-size: 12px;
+    color: var(--neutrals-darkest-medium-grey);
+    font-weight: 300;
+    margin: 0;
+}
+
+
+@media(max-width: 1060px) {
+    .top-card {
+        margin-top: 60px;
+    }
+}
+</style>
+<script>
+    var gradHeader = customHtmlRoot.shadowRoot.querySelector('.grad .heading');
+var themeHeader = document.querySelector("#themeHeader").shadowRoot;
+var grad = themeHeader.querySelector('#grad-icon');
+gradHeader.appendChild(grad);
+</script>

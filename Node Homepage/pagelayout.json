@@ -1,0 +1,146 @@
+{
+    "layout": [
+        {
+            "$hydrate": "react.section.full-width",
+            "children": [
+                {
+                    "$hydrate": "react.app-banner",
+                    "showDescription": true,
+                    "showSearch": true,
+                    "background": {
+                        "useOverlay": true,
+                        "color": "#240F6E"
+                    },
+                    "title": "Welcome to the  Kaplan Community",
+                    "alignment": "left",
+                    "description": "Fermentum mi sagittis magna viverra lacus donec. Orci placerat sapien pellentesque felis aliquet dolor cum. Ut faucibus lacus ullamcorper nulla."
+                }
+            ]
+        },
+        {
+            "$hydrate": "react.section.full-width",
+            "children": [
+                {
+                    "$hydrate": "react.html",
+                    "html": "<img id=\"card-graphic\" src=\"https://us.v-cdn.net/6037957/uploads/LNPLV3PAXN1P/cards-graphic.png\" >\n<img id=\"hero-image\" src=\"https://us.v-cdn.net/6037957/uploads/8IIQ7ILRQ7QZ/hero-img.png\" >\n<img id=\"hero-graphic1\" src=\"https://us.v-cdn.net/6037957/uploads/3WUCCCU5B39X/hero-graphic-mask.png\" >\n<img id=\"hero-graphic2\" src=\"https://us.v-cdn.net/6037957/uploads/RX2E8OP87ORC/hero-graphic-2.png\" >\n<div id=\"clearfix\" style=\"clear: both;\"></div>\n<style id=\"whoonline\">\n\n/* Styling for who's online on homepage */\nhtml body .bg-grey div[class*=\"twoColumnLayout-rightColumn\"] .panelArea > div:nth-of-type(2) > div {\n    background-color: var(--neutrals-black-grey) !important;\n    border-radius: 30px 0 0 0 !important;\n    padding: 24px !important;\n}\nhtml body .bg-grey .pageHeadingBox.pageHeadingBox.pageHeadingBox h5:not(.subtitle), \nhtml body .bg-grey .pageHeadingBox.pageHeadingBox.pageHeadingBox span[class*=\"PageHeadingBox-styles-titleCount\"] {\n    color: var(--neutrals-white);\n}\n\n</style>\n\n",
+                    "css": "img {\n    position: absolute;\n    right: 0;\n}\n",
+                    "name": "Homepage Assets",
+                    "javascript": "var bannerElm = window.document.querySelector('div[class*=\"Banner-styles-root\"]');\nvar heroImage = customHtmlRoot.shadowRoot.querySelector('#hero-image');\nvar heroGraphic1 = customHtmlRoot.shadowRoot.querySelector('#hero-graphic1');\nvar heroGraphic2 = customHtmlRoot.shadowRoot.querySelector('#hero-graphic2');\nvar whosOnlineStyling = customHtmlRoot.shadowRoot.querySelector('#whoonline');\nvar headElm = window.document.querySelector('head');\nvar featuredImg = window.document.querySelector('li[class*=\"FeaturedCollections-style-listWrapper\"] img');\nconst clearFixElm = customHtmlRoot.shadowRoot.querySelector('#clearfix');\nconst bodyElm = window.document.querySelector('body')\nconsole.log('featured img', featuredImg);\nconsole.log('whoOnline', whosOnlineStyling);\nconsole.log('head element', headElm);\nheadElm.append(whosOnlineStyling);\nbannerElm.append(heroImage);\nbannerElm.append(heroGraphic1);\nbannerElm.append(heroGraphic2);\nbannerElm.append(clearFixElm);\nconst loggedIn = window.document.querySelector('.meBox');\nif (loggedIn === null) {\n    bodyElm.classList.add('logged-out')\n}\n"
+                }
+            ]
+        },
+        {
+            "$hydrate": "react.section.full-width"
+        },
+        {
+            "$hydrate": "react.section.1-column",
+            "children": [
+                {
+                    "$hydrate": "react.html",
+                    "html": "<div class=\"top-card k-12\">\n    <div class=\"heading\">\n        <h2>K-12</h2>\n        <p>Ultrices nec habitant eleifend tristique odio.</p>\n<img id=\"pencil-icon\" src=\"https://us.v-cdn.net/6037957/uploads/336R06WCZWMB/edit.png\" >\n    </div>\n    <div class=\"content\">\n        <a href=\"#needsLink\" class=\"coming-soon\">\n            <span class=\"eyebrow\">Coming Soon</span>\n            <h3>Parents</h3>\n            <p>Details description go here on 2 lines</p>\n        </a>\n    </div>\n</div>",
+                    "css": ".top-card {\n    font-family: Open Sans;\n    line-height: 150%;\n    margin-right: 24px;\n    height: 100%;\n}\n\n.top-card .heading {\n    border-radius: 0 30px 0 0;\n    background-color: var(--core-purple);\n    padding: 12px 24px;\n    position: relative;\n    padding-right: 76px;\n}\n\n.top-card .heading h2 {\n    font-size: 16px;\n    font-weight: 600;\n    color: var(--neutrals-white);\n    margin: 0;\n}\n\n.top-card .heading p {\n    font-size: 12px;\n    font-weight: 400;\n    color: var(--neutrals-white);\n    margin: 0;\n}\n\n.top-card .heading img {\n    position: absolute;\n    top: 16px;\n    right: 24px;\n    height: 30px;\n    width: 30px;\n    border-radius: 15px;\n    background-color: var(--accent-pink-2);\n    color: var(--neutrals-white);\n    padding: 11px;\n}\n\n.top-card .content {\n    padding: 16px;\n    background-color: var(--neutrals-light-grey);\n    height: calc(100% - 120px);\n}\n\n.top-card a {\n    padding: 16px;\n    border-radius: 10px;\n    display: block;\n    text-decoration: none;\n    background-color: var(--neutrals-white);\n\n}\n\n\n.top-card a+a {\n    margin-top: 8px;\n}\n\n.eyebrow {\n    font-size: 12px;\n    color: var(--accent-blue-1);\n}\n\n.top-card a.coming-soon {\nborder: 1px solid var(--neutrals-grey );\nbackground: transparent;\n}\n\n.top-card a h3 {\n    font-size: 18px;\n    color: var(--neutrals-darkest-medium-grey);\n    font-weight: 300;\n    margin:4px 0;\n    font-family: Merriweather;\n}\n\n\n.top-card a p {\n    font-size: 12px;\n    color: var(--neutrals-darkest-medium-grey);\n    font-weight: 300;\n    margin: 0;\n}\n\n@media(max-width: 1060px) {\n    .top-card {\n        margin-top: 60px;\n    }\n}",
+                    "javascript": "var k12Header = customHtmlRoot.shadowRoot.querySelector('.k-12 .heading');\nvar k12 = customHtmlRoot.shadowRoot.querySelector('.k-12');\nvar themeHeader = document.querySelector(\"#themeHeader\").shadowRoot;\nvar pencil = themeHeader.querySelector('#pencil-icon');\nk12Header.appendChild(pencil);\nvar wrapperElm = k12.closest('div');\nconsole.log(wrapperElm);",
+                    "name": "K-12"
+                },
+                {
+                    "$hydrate": "react.html",
+                    "html": "<div class=\"top-card undergrad\">\n    <div class=\"heading\">\n        <h2>Undergraduate</h2>\n        <p>Ultrices nec habitant eleifend tristique odio.</p>\n        <img id=\"undergrad-icon\" src=\"https://us.v-cdn.net/6037957/uploads/JY6U50QYL0QA/undergrad.png\" >\n    </div>\n    <div class=\"content\">\n        <a href=\"#needsLink\" class=\"coming-soon\">\n            <span class=\"eyebrow\">Coming Soon</span>\n            <h3>Pre-Law</h3>\n            <p>Details description go here on 2 lines</p>\n        </a>\n        <a href=\"#needsLink\" class=\"coming-soon\">\n            <span class=\"eyebrow\">Coming Soon</span>\n            <h3>Pre-Med</h3>\n            <p>Details description go here on 2 lines</p>\n        </a>\n    </div>\n</div>",
+                    "css": ".top-card {\n    font-family: Open Sans;\n    line-height: 150%;\n    margin-right: 24px;\n    height: 100%;\n}\n\n.top-card .heading {\n    border-radius: 0 30px 0 0;\n    background-color: var(--core-purple);\n    padding: 12px 24px;\n    position: relative;\n    padding-right: 76px;\n}\n\n.top-card .heading h2 {\n    font-size: 16px;\n    font-weight: 600;\n    color: var(--neutrals-white);\n    margin: 0;\n}\n\n.top-card .heading p {\n    font-size: 12px;\n    font-weight: 400;\n    color: var(--neutrals-white);\n    margin: 0;\n}\n\n.top-card .heading img {\n    position: absolute;\n    top: 16px;\n    right: 24px;\n    height: 30px;\n    width: 30px;\n    border-radius: 15px;\n    background-color: var(--accent-pink-2);\n    color: var(--neutrals-white);\n    padding: 11px;\n}\n\n.top-card .content {\n    padding: 16px;\n    background-color: var(--neutrals-light-grey);\n    height: calc(100% - 120px);\n}\n\n.top-card a {\n    padding: 16px;\n    border-radius: 10px;\n    display: block;\n    text-decoration: none;\n    background-color: var(--neutrals-white);\n\n}\n\n.top-card a+a {\n    margin-top: 8px;\n}\n\n.eyebrow {\n    font-size: 12px;\n    color: var(--accent-blue-1);\n}\n\n.top-card a.coming-soon {\nborder: 1px solid var(--neutrals-grey );\nbackground: transparent;\n}\n\n.top-card a h3 {\n    font-size: 18px;\n    color: var(--neutrals-darkest-medium-grey);\n    font-weight: 300;\n    margin:4px 0;\n    font-family: Merriweather;\n}\n\n\n.top-card a p {\n    font-size: 12px;\n    color: var(--neutrals-darkest-medium-grey);\n    font-weight: 300;\n    margin: 0;\n}\n\n@media(max-width: 1060px) {\n    .top-card {\n        margin-top: 60px;\n    }\n}",
+                    "name": "Undergraduate",
+                    "javascript": "var undergradHeader = customHtmlRoot.shadowRoot.querySelector('.undergrad .heading');\nvar themeHeader = document.querySelector(\"#themeHeader\").shadowRoot;\nvar undergrad = themeHeader.querySelector('#undergrad-icon');\nundergradHeader.appendChild(undergrad);"
+                },
+                {
+                    "$hydrate": "react.html",
+                    "html": "<div class=\"top-card grad\">\n    <div class=\"heading\">\n        <h2>Graduate</h2>\n        <p>Ultrices nec habitant eleifend tristique odio.</p>\n<img id=\"grad-icon\" src=\"https://us.v-cdn.net/6037957/uploads/C4RM4N1G2GL1/graduate.png\" >\n    </div>\n    <div class=\"content\">\n        <a href=\"#needsLink\" class=\"coming-soon\">\n            <span class=\"eyebrow\">Coming Soon</span>\n            <h3>Law Students</h3>\n            <p>Details description go here on 2 lines</p>\n        </a>\n        <a href=\"#needsLink\" class=\"coming-soon\">\n            <span class=\"eyebrow\">Coming Soon</span>\n            <h3>Family Nurse Practitioner</h3>\n            <p>Details description go here on 2 lines</p>\n        </a>\n    </div>\n</div>",
+                    "css": ".top-card {\n    font-family: Open Sans;\n    line-height: 150%;\n    margin-right: 24px;\n    height: 100%;\n}\n\n.top-card .heading {\n    border-radius: 0 30px 0 0;\n    background-color: var(--core-purple);\n    padding: 12px 24px;\n    position: relative;\n    padding-right: 76px;\n}\n\n.top-card .heading h2 {\n    font-size: 16px;\n    font-weight: 600;\n    color: var(--neutrals-white);\n    margin: 0;\n}\n\n.top-card .heading p {\n    font-size: 12px;\n    font-weight: 400;\n    color: var(--neutrals-white);\n    margin: 0;\n}\n\n.top-card .heading img {\n    position: absolute;\n    top: 16px;\n    right: 24px;\n    height: 30px;\n    width: 30px;\n    border-radius: 15px;\n    background-color: var(--accent-pink-2);\n    color: var(--neutrals-white);\n    padding: 11px;\n}\n\n.top-card .content {\n    padding: 16px;\n    background-color: var(--neutrals-light-grey);\n    height: calc(100% - 120px);\n}\n\n.top-card a {\n    padding: 16px;\n    border-radius: 10px;\n    display: block;\n    text-decoration: none;\n    background-color: var(--neutrals-white);\n\n}\n\n.eyebrow {\n    font-size: 12px;\n    color: var(--accent-blue-1);\n}\n\n.top-card a+a {\n    margin-top: 8px;\n}\n\n.top-card a.coming-soon {\nborder: 1px solid var(--neutrals-grey );\nbackground: transparent;\n}\n\n.top-card a h3 {\n    font-size: 18px;\n    color: var(--neutrals-darkest-medium-grey);\n    font-weight: 300;\n    margin:4px 0;\n    font-family: Merriweather;\n}\n\n\n.top-card a p {\n    font-size: 12px;\n    color: var(--neutrals-darkest-medium-grey);\n    font-weight: 300;\n    margin: 0;\n}\n\n\n@media(max-width: 1060px) {\n    .top-card {\n        margin-top: 60px;\n    }\n}",
+                    "name": "Graduate",
+                    "javascript": "var gradHeader = customHtmlRoot.shadowRoot.querySelector('.grad .heading');\nvar themeHeader = document.querySelector(\"#themeHeader\").shadowRoot;\nvar grad = themeHeader.querySelector('#grad-icon');\ngradHeader.appendChild(grad);"
+                },
+                {
+                    "$hydrate": "react.html",
+                    "html": "<div class=\"top-card pro\">\n    <div class=\"heading\">\n        <h2>Graduate</h2>\n        <p>Ultrices nec habitant eleifend tristique odio.</p>\n<img id=\"pro-icon\" src=\"https://us.v-cdn.net/6037957/uploads/8UB33YTEW07S/pro.png\" >\n    </div>\n    <div class=\"content\">\n        <a href=\"https://kaplanhub.vanillacommunities.com/communities/financialanalysts\">\n            <h3>Financial Analysts</h3>\n            <p>Details description go here on 2 lines</p>\n        </a>\n        <a href=\"#needsLink\" class=\"coming-soon\">\n            <span class=\"eyebrow\">Coming Soon</span>\n            <h3>Financial Planners</h3>\n            <p>Details description go here on 2 lines</p>\n        </a>\n        <a href=\"https://kaplanhub.vanillacommunities.com/communities/realestate\">\n            <h3>Real Estate</h3>\n            <p>Details description go here on 2 lines</p>\n        </a>\n    </div>\n</div>",
+                    "css": ".top-card {\n    font-family: Open Sans;\n    line-height: 150%;\n    margin-right: 24px;\n    height: 100%;\n}\n\n.top-card .heading {\n    border-radius: 0 30px 0 0;\n    background-color: var(--core-purple);\n    padding: 12px 24px;\n    position: relative;\n    padding-right: 76px;\n}\n\n.top-card .heading h2 {\n    font-size: 16px;\n    font-weight: 600;\n    color: var(--neutrals-white);\n    margin: 0;\n}\n\n.top-card .heading p {\n    font-size: 12px;\n    font-weight: 400;\n    color: var(--neutrals-white);\n    margin: 0;\n}\n\n.top-card .heading img {\n    position: absolute;\n    top: 16px;\n    right: 24px;\n    height: 30px;\n    width: 30px;\n    border-radius: 15px;\n    background-color: var(--accent-pink-2);\n    color: var(--neutrals-white);\n    padding: 11px;\n}\n\n.top-card .content {\n    padding: 16px;\n    background-color: var(--neutrals-light-grey);\n    height: calc(100% - 120px);\n}\n\n.top-card a.coming-soon {\nborder: 1px solid var(--neutrals-grey );\nbackground: transparent;\n}\n\n.top-card a {\n    padding: 16px;\n    border-radius: 10px;\n    display: block;\n    text-decoration: none;\n    border: none;\n    background-color: var(--neutrals-white);\n\n}\n\n.top-card a+a {\n    margin-top: 8px;\n}\n\n.eyebrow {\n    font-size: 12px;\n    color: var(--accent-blue-1);\n}\n\n\n.top-card a h3 {\n    font-size: 18px;\n    color: var(--neutrals-darkest-medium-grey);\n    font-weight: 300;\n    margin:4px 0;\n    font-family: Merriweather;\n}\n\n\n.top-card a p {\n    font-size: 12px;\n    color: var(--neutrals-darkest-medium-grey);\n    font-weight: 300;\n    margin: 0;\n}\n\n\n@media(max-width: 1060px) {\n    .top-card {\n        margin-top: 60px;\n    }\n}",
+                    "name": "Professional",
+                    "javascript": "var proHeader = customHtmlRoot.shadowRoot.querySelector('.pro .heading');\nvar themeHeader = document.querySelector(\"#themeHeader\").shadowRoot;\nvar pro = themeHeader.querySelector('#pro-icon');\nproHeader.appendChild(pro);"
+                }
+            ]
+        },
+        {
+            "$hydrate": "react.section.2-columns",
+            "mainBottom": [
+                {
+                    "$hydrate": "react.discussion.discussions",
+                    "apiParams": {
+                        "includeChildCategories": true,
+                        "sort": "-dateLastComment",
+                        "slotType": "a",
+                        "limit": 10
+                    },
+                    "discussionOptions": {
+                        "excerpt": {
+                            "display": true
+                        },
+                        "metas": {
+                            "display": {
+                                "category": true,
+                                "startedByUser": true,
+                                "lastUser": true,
+                                "lastCommentDate": true,
+                                "viewCount": true,
+                                "commentCount": true,
+                                "score": true,
+                                "userTags": true,
+                                "unreadCount": true
+                            }
+                        }
+                    },
+                    "title": "Discussions"
+                }
+            ],
+            "secondaryBottom": [
+                {
+                    "$hydrate": "react.html",
+                    "name": "Login Prompt",
+                    "$middleware": {
+                        "role-filter": {
+                            "roleIDs": [
+                                2
+                            ]
+                        }
+                    },
+                    "html": "<div class=\"login-panel\">\n    <h5>Welcome</h5>\n    <p>Integer ornare dictum eu pulvinar sed nisi tristique vel. Aliquam fringilla sem sagittis diam nullam aliquam.</p>\n    <a href=\"#needsLink\">Sign In</a><a href=\"#needsLink\">Register</a>\n</div>\n\n    \n\n<style id=\"loggedOutStyle\">\n    div[class*=\"twoColumnLayout-rightColumn\"] .panelArea > div:nth-of-type(3) > div {\n        background-color: var(--neutrals-black-grey) !important;\n        border-radius: 30px 0 0 0 !important;\n        padding: 24px !important;\n    }\n\n        div[class*=\"twoColumnLayout-rightColumn\"] .panelArea > div:nth-of-type(3)  h5 {\n            color: var(--neutrals-white);\n        }\n\n        div[class*=\"twoColumnLayout-rightColumn\"] .panelArea > div:nth-of-type(4) > div {\n            background: transparent !important;\n            padding: 0 !important;\n        }\n\n\n</style>",
+                    "css": ".login-panel {\n    background-color: var(--core-purple);\n    border-radius: 0px 30px 0px 0px; \n    padding: 24px;\n}\n\n.login-panel h5 {\n    font-size: 18px;\n    font-style: normal;\n    font-weight: 300; \n    color: var(--neutrals-white);\n    margin:0;\n    margin-bottom: 20px;\n}\n\n.login-panel p {\n    font-family: 'Open Sans';\n    font-size: 14px;\n    font-weight: 300; \n    color: var(--neutrals-white);\n}\n\n.login-panel a {\n    font-family: Open Sans;\n    font-size: 16px;\n    font-weight: 600;\n    line-height: 1;\n    padding: 12px 24px;\n    border-radius: 96px;\n    display:inline-block;\n    text-decoration: none;\n}\n\n.login-panel a:first-of-type {\n    background: var(--neutrals-white);\n    color:var(--core-purple);\n}\n\n.login-panel a:last-of-type {\n    color: var(--neutrals-white);\n    background:var(--core-purple);\n}\n\n.login-panel a:first-of-type {\n    background: var(--neutrals-white);\n    color:var(--core-purple);\n}\n\n.login-panel a:last-of-type:hover,\n.login-panel a:last-of-type:focus {\n    background: var(--neutrals-white);\n    color:var(--core-purple);\n}\n.login-panel a:first-of-type:hover,\n.login-panel a:first-of-type:focus {\n    color: var(--neutrals-white);\n    background:var(--core-purple);\n}\n",
+                    "javascript": "const loggedOutStyle = customHtmlRoot.shadowRoot.querySelector('#loggedOutStyle');\n\nconst headELM = window.document.querySelector('head');\nheadELM.append(loggedOutStyle);"
+                },
+                {
+                    "$hydrate": "react.newpost",
+                    "asOwnButtons": [],
+                    "excludedButtons": []
+                },
+                {
+                    "$hydrate": "react.online",
+                    "style": "pictures",
+                    "title": "Who's Online"
+                },
+                {
+                    "$hydrate": "react.html",
+                    "html": "<div class=\"featured-content\">\n    <div class=\"image-content\"><img src=\"https://us.v-cdn.net/6037957/uploads/Q3NHU5FYUJEL/featured-article.png\"></div>\n    <div class=\"text-content\">\n        <h3>Recommended article title lorem ipsum dolor sit amet consectetur</h3>\n        <p>Integer ornare dictum eu pulvinar sed nisi tristique vel. Aliquam fringilla sem sagittis diam nullam aliquam.</p>\n    </div>\n    </div>",
+                    "name": "Featured Content",
+                    "css": ".featured-content {\n    display: flex;\n    flex-direction: column;\n}\n\n.featured-content .image-content {\n    border-radius: 0 30px 0 0;\n    overflow: hidden;\n    background-color: var(--neutrals-white);\n}\n\n\n.featured-content .image-content img {\n    width: 100%;\n}\n\n.featured-content .text-content {\n    padding: 24px;\n    padding-bottom: 15px;\n    background-color: var(--neutrals-white);\n}\n\n.featured-content .text-content h3 {\n    font-size: 18px;\nfont-family: Merriweather;\nfont-weight: 300;\nline-height: 150%; \ncolor: var(--neutrals-black-grey);\nmargin: 0;\nmargin-bottom: 8px;\n}\n\n.featured-content .text-content p {\n    font-size: 14px;\nfont-family: Open Sans;\nline-height: 160%; \ncolor: var(--neutrals-black-grey);\n}"
+                }
+            ]
+        },
+        {
+            "$hydrate": "react.section.full-width",
+            "children": [
+                {
+                    "$hydrate": "react.html",
+                    "html": "<div class=\"cta-section\">\n    <div class=\"image-content\"><img src=\"https://us.v-cdn.net/6037957/uploads/DTOW5XTU2LXZ/cta-img.png\"></div>\n    <div class=\"text-content\">\n        <h5>Label</h5>\n        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pulvinar sem ut ultricies laoreet facilisis.</h2>\n        <p>Mattis bibendum nec ullamcorper nam amet in faucibus nec. Bibendum non nullam id risus posuere gravida.</p>\n        <a href=\"#needsLink\">CTA Button</a>\n    </div>\n</div>",
+                    "name": "CTA Section",
+                    "css": ".cta-section {\n    background-color: var(--accent-red-1);\n    padding: 64px calc(50% - 720px);\n    position: relative;\n    display: flex;\n    flex-direction: row;\n}\n\n.cta-section::before {\n    content: '';\n    width: 473px;\n    height: 380px;\n    position: absolute;\n    top: 0;\n    left: calc(50% - 800px);\n    background-image: url('https://us.v-cdn.net/6037957/uploads/JNUFN4UQBWW8/cta-graphic.png');\n}\n\n.cta-section .image-content {\n    position: relative;\n    z-index: 5;\n}\n.cta-section .text-content  {\n    color: var(--neutrals-white);\n    margin-left: 96px;\n    max-width: 588px;\n}\n\n.cta-section .text-content h5 {\n    font-size: 16px;\n    font-family: Merriweather;\n    margin: 0;\n    margin-bottom: 8px;\n    font-weight: 300;\n}\n\n.cta-section .text-content h2 {\n    font-size: 34px;\n    font-family: Merriweather;\n    margin: 0;\n    margin-bottom: 16px;\n    font-weight: 300;\n}\n\n.cta-section .text-content p {\n    font-size: 16px;\n    font-family: Open Sans;\n    margin: 0;\n    margin-bottom: 32px;\n}\n\n.cta-section .text-content a {\n    border: 2px solid var(--neutrals-white);\n    border-radius: 96px;\n    padding: 14px 24px;\n    font-size: 16px;\n    font-family: Open Sans;\n    line-height: 100%;\n    text-decoration: none;\n    color: var(--white);\n    font-weight: 600;\n}\n\n.cta-section .text-content a:hover, .cta-section .text-content a:focus {\n    transition: 0.3s;\n    background-color: var(--neutrals-white);\n    color: var(--accent-red-1);\n}\n\n@media (max-width: 1200px) {\n    .text-content {\n        padding-right: 20px;\n    }\n}\n\n@media (max-width: 930px) {\n    .cta-section {\n        flex-direction: column;\n    }\n\n        .text-content {\n        padding-top: 20px;\n    }\n}",
+                    "javascript": "var topCard = window.document.querySelector('.noLeftPanel').classList.add('bg-grey');\nconsole.log('trying to access body by custom html method', topCard);"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+<div class="login-panel">
+    <h5>Welcome</h5>
+    <p>Integer ornare dictum eu pulvinar sed nisi tristique vel. Aliquam fringilla sem sagittis diam nullam aliquam.</p>
+    <a href="#needsLink">Sign In</a><a href="#needsLink">Register</a>
+</div>
+
+    
+
+<style id="loggedOutStyle">
+    div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(3) > div {
+        background-color: var(--neutrals-black-grey) !important;
+        border-radius: 30px 0 0 0 !important;
+        padding: 24px !important;
+    }
+
+        div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(3)  h5 {
+            color: var(--neutrals-white);
+        }
+
+        div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div {
+            background: transparent !important;
+            padding: 0 !important;
+        }
+
+
+</style>
+<style>
+    .login-panel {
+    background-color: var(--core-purple);
+    border-radius: 0px 30px 0px 0px; 
+    padding: 24px;
+}
+
+.login-panel h5 {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300; 
+    color: var(--neutrals-white);
+    margin:0;
+    margin-bottom: 20px;
+}
+
+.login-panel p {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 300; 
+    color: var(--neutrals-white);
+}
+
+.login-panel a {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 12px 24px;
+    border-radius: 96px;
+    display:inline-block;
+    text-decoration: none;
+}
+
+.login-panel a:first-of-type {
+    background: var(--neutrals-white);
+    color:var(--core-purple);
+}
+
+.login-panel a:last-of-type {
+    color: var(--neutrals-white);
+    background:var(--core-purple);
+}
+
+.login-panel a:first-of-type {
+    background: var(--neutrals-white);
+    color:var(--core-purple);
+}
+
+.login-panel a:last-of-type:hover,
+.login-panel a:last-of-type:focus {
+    background: var(--neutrals-white);
+    color:var(--core-purple);
+}
+.login-panel a:first-of-type:hover,
+.login-panel a:first-of-type:focus {
+    color: var(--neutrals-white);
+    background:var(--core-purple);
+}
+
+</style>
+<script>
+    const loggedOutStyle = customHtmlRoot.shadowRoot.querySelector('#loggedOutStyle');
+
+const headELM = window.document.querySelector('head');
+headELM.append(loggedOutStyle);
+</script>

@@ -2,6 +2,10 @@
 
 <style id="stylesheet" rel="stylesheet" type="text/css">
 
+    body {
+        overflow-x: hidden;
+    }
+
 
     /* CSS Variables */
 :root {
@@ -27,7 +31,7 @@ div[class*="HomeWidgetContainer-styles-root"] {
     background: transparent;
 }
 
-.bg-grey {
+html body .bg-grey {
     background-color: #d9d9d9;
     padding: 60px 0;
     margin: 0;
@@ -76,14 +80,16 @@ html body
 div[class*="twoColumnLayout-WidgetLayout"]  {
     background: #efefef;
     margin-top: 0 !important;
-    padding-top: 40px;
     margin-bottom: 0;
 }
 
 
 div[class*="twoColumnLayout-WidgetLayout"] div[class*="HomeWidgetContainer-styles-root"] {
     margin: 0 !important;
-    padding: 16px 0;
+     padding: 16px 0; 
+}
+div[class*="twoColumnLayout-WidgetLayout"] div[class*="panelWidgetStyles-rootpanelWidget"] {
+    padding: 0;
 }
 
 /* Styling for Discussions on Homepage */
@@ -132,11 +138,18 @@ h5 {
     font-family: Open Sans;
 }
 
+html body div[class*="ListItem-styles-metasContainer"] {
+    margin-top: 17px !important;
+}
 
-li.pageBoxNoCompat span[class*="tag"] {
+li.pageBoxNoCompat span[class*="tag"],
+li.pageBoxNoCompat a[class*="tag"],
+.Meta.Meta .Tag, .AuthorInfo .Tag {
     border: 1px solid var(--core-purple);
     color: var(--core-purple);
 }
+
+
 
 
 li.pageBoxNoCompat span[class*="tag"] {
@@ -164,12 +177,22 @@ div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat h3 {
     border-color: transparent;
     display: none;
 }
+
+div[class*="twoColumnLayout-mainColumn"] li h3[class*="ListItem-styles-title"] a,
+div[class*="twoColumnLayout-mainColumn"] li p[class*="ListItem-styles-description"] {
+    color: #000;
+}
+
+a[class*="homeWidgetItem-homeWidgetItem"] {
+    box-shadow: none;
+}
+
  /* Quicklinks styling */
 
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(2) > div  {
-    background-color: var(--neutrals-white);
-    border-radius: 0 0 30px 0;
-    padding: 24px;
+ .bg-grey div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(2) > div  {
+    background-color: var(--neutrals-white) !important;
+    border-radius: 0 0 30px 0 !important;
+    padding: 24px !important;
 }
 
 div.Panel-main div[class*="quickLinks"] .pageHeadingBox  {
@@ -191,7 +214,7 @@ div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div 
     padding: 24px;
 }
 
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div h5 {
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div .pageHeadingBox.pageHeadingBox.pageHeadingBox h5 {
     color: var(--neutrals-white);
     font-weight: 300;
 }
@@ -213,6 +236,7 @@ div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(5) > div 
 button[class*="newPostMenuStyles-button"] {
     width: 100%;
     max-width: unset !important;
+    font-family:'Open Sans';
 }
 
 button[class*="newPostMenuStyles-button"]  div[class*="buttonContents"] {
@@ -237,7 +261,6 @@ button[class*="newPostMenuStyles-button"]  div[class*="buttonContents"] {
     z-index: 1;
     height: 280px;
     align-self: flex-end;
-    position: relative;
 }
 
 
@@ -247,9 +270,9 @@ button[class*="newPostMenuStyles-button"]  div[class*="buttonContents"] {
 div[class*="Banner-styles-root"] {
     background-color: rgb(29, 12, 88);
     position: relative;
-    /* Testing flex options for mobile */
-    display: flex;
 }
+
+
 
 
 div[class*="Banner-styles-root"] > div[class*="bannerContainer"]:only-child  {
@@ -383,6 +406,12 @@ div[class*="SectionOneColumn"] > div > div {
 
 div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
     max-height: unset;
+    padding-top: 130px;
+}
+
+
+table[class*="LeaderboardWidget-styles-table"] {
+    margin: 0px 15px;
 }
 
 table[class*="LeaderboardWidget-styles-table"] tr {
@@ -390,10 +419,13 @@ table[class*="LeaderboardWidget-styles-table"] tr {
     position: relative;
 }
 
+span[class*="LeaderboardWidget-styles-userStyle"] {
+    padding-top: 0;
+}
 
 table[class*="LeaderboardWidget-styles-table"] tr td:nth-of-type(2) {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 50px;
     padding: 0 10px;
     border: 1px solid var(--core-purple);
@@ -410,6 +442,10 @@ table[class*="LeaderboardWidget-styles-table"] tr::before {
     height: 18px;
     border-radius: 30px;
     color: #fff;
+}
+
+td[class*="LeaderboardWidget-styles-cell:first-of-type"] {
+    padding-bottom: 10px;
 }
 
 table[class*="LeaderboardWidget-styles-table"] tr:nth-of-type(1)::before {
@@ -450,7 +486,7 @@ table[class*="LeaderboardWidget-styles-table"] tr:nth-of-type(2)::before {
 
 table[class*="LeaderboardWidget-styles-table"] tr:nth-of-type(3)::before {
         content: '3';
-        background: #DE1B90;
+        background: #D6083B;
     color: #fff;
     width: 18px;
     height: 18px;
@@ -500,6 +536,7 @@ a[class*="LeaderboardWidget-styles-linkStyles"] {
 a.selectBox-toggle,
 a {
     color: var(--core-purple);
+    font-family: 'Open Sans';
     transition: 0.3s;
 }
 
@@ -582,6 +619,7 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
 
 .TagCloud li.TagCloud-Item.TagCloud-Item.TagCloud-Item a .Count, .PanelInfo.PanelCategories li .Count {
     background-color: var(--core-purple);
+    color: var(--neutrals-white);
 }
 
 .PanelInfo.PanelCategories li a:hover .Count {
@@ -593,12 +631,24 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
 .Panel .pageBox .BoxCategories .PanelInfo.PanelCategories,/* profile badges selector */
 .Profile.editor-active .Panel.Panel-main .pageBox div:nth-of-type(5),
 .Profile:not(.editor-active) .Panel.Panel-main .pageBox div:nth-of-type(3),
-.Profile .Panel.Panel-main .pageBox ul.FilterMenu
+.Profile .Panel.Panel-main .pageBox ul.FilterMenu,
+.Panel.Panel-main .pageBox ul.Leaderboard__user-list
  {
     padding: 24px;
     padding-top: 0;
+    border-radius: 0 0 0 30px;
+    background-color: var(--neutrals-white);
+}
+
+div[class*="Section-styles-secondaryPanelWidget-quickLinks"] {
+    padding: 24px;
     border-radius: 0 0 30px 0;
     background-color: var(--neutrals-white);
+}
+
+
+div[class*="Section-styles-secondaryPanelWidget-quickLinks"] li {
+    border-bottom: 1px solid var(--neutrals-light-grey);
 }
 .PanelInfo.PanelCategories .Active {
     background: transparent;
@@ -608,6 +658,22 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
     border: 0;
 }
 
+.Profile .Panel.Panel-main .pageBox ul.FilterMenu li a {
+    font-family: 'Open Sans';
+    color: var(--kaplan-core-purple-1);
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 600;
+}
+
+
+.Profile .Panel.Panel-main .pageBox ul.FilterMenu li a:hover,.Profile .Panel.Panel-main .pageBox ul.FilterMenu li a:focus {
+    color:var(--kaplan-deep-blue-purple);
+}
+
+.Profile .Panel.Panel-main .pageBox ul.FilterMenu li a:active {
+    color: var(--kaplan-regular-blue-purple);
+}
 
 
 /* Styling for who's online on homepage */
@@ -640,11 +706,16 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
 .Frame ul.media-list.pageBox li::after {
     content: none;
 }
-
+/* Content Wrapper */
 .Frame ul.media-list.pageBox li,
 .Section-DiscussionList .Frame ul.Discussions li.ItemDiscussion, .MessageList.Discussion,
 .Section-Discussion .Content .Comments li.ItemComment .Comment,
-body.Profile div.Profile div.About.P section {
+body.Profile div.Profile div.About.P section,
+.Section-Profile .Content .Profile ul.Activities li.Item, .Frame ul.Activities li.Item.Activity,
+.Frame ul.Badges li.Item.ItemBadge,
+.Frame ul.Drafts li.Item.Draft,
+.Frame-details div[class*="AccountSettings-classes-infoRow"]
+ {
     background-color: var(--neutrals-white);
     padding: 16px;
     margin-bottom: 16px;
@@ -660,9 +731,20 @@ body.Profile div.Profile div.About.P section {
 .Section-Discussion .Content .Comments li.ItemComment::before,
 .Section-Discussion .Content .pageBox .pageBox::before,
 .Section-Discussion .Content .pageBox .pageBox::after,
-.Section-Discussion .Content .Comments li.ItemComment .Comment::after
+.Section-Discussion .Content .Comments li.ItemComment .Comment::after,
+.Section-Profile .Content .Profile ul.Activities li.Item::before,
+.Section-Profile .Content .Profile ul.Activities li.Item::after,
+.Frame ul.Activities li.Item.Activity::before,
+.Frame ul.Activities li.Item.Activity:after,
+.Frame ul.Drafts li.Item.Draft::before,
+.Frame ul.Drafts li.Item.Draft::after
  {
     content: none;
+}
+
+.Section-Profile .Content .Profile ul.Activities li.Item div[class="Title"] {
+    font-family: 'Open Sans';
+    font-weight: 600;
 }
 
 .Frame ul.media-list.pageBox li:last-of-type {
@@ -675,11 +757,14 @@ body.Profile div.Profile div.About.P section {
     margin-bottom: 8px;
     font-weight: 600;
     line-height: 150%;
+    font-family: 'Open Sans';
 }
 
 #vanilla-editor-root {
     background: var(--neutrals-white);
 }
+
+
 
 /* Profile */
 
@@ -692,23 +777,36 @@ body.Profile div.Profile div.About section h2 {
 
 /* Default header Styling */
 .Frame .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox h2,.pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h1:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h2:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h3:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h4:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h5:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge [role="heading"]:not(.subtitle),
-.pageHeadingBox.pageHeadingBox.pageHeadingBox h1:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h2:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h3:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h4:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h5:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox [role="heading"]:not(.subtitle)
+.pageHeadingBox.pageHeadingBox.pageHeadingBox h1:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h2:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h3:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h4:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h5:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox [role="heading"]:not(.subtitle), h1, h2, h3, h4, h5, h6
  {
-    font-family: Merriweather;
+    font-family: 'Merriweather' !important;
     font-size: 34px;
     line-height: 130%;
     font-weight: 300;
     color: #000;
 }
 
+
+a[class*="homeWidgetItem-homeWidgetItem"] h3 {
+    font-family: 'Open Sans' !important;
+}
+
 .pageHeadingBox.pageHeadingBox.pageHeadingBox h1:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h2:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h3:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h4:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h5:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox [role="heading"]:not(.subtitle) {
-    font-size: 25px;
+    font-size: 18px;
+}
+
+.PageControls.PageControls .selectBox {
+    font-family: 'Open Sans';
 }
 
 /* Global Styles */
 
 
 /* Nav */
+
+header#titleBar div[class*="titleBarStyles-bar"] {
+    height: 80px;
+}
 
 .headerNavigation ul li a {
     font-family: 'Open Sans';
@@ -857,12 +955,27 @@ a, a:hover, a:focus, a:active {
 
 /* responsive */
 
-@media (max-width: 1360px) {
-    body div[class*="Banner-styles-root"]  {
-        /* height: 600px; */
-        flex-direction: column;
+@media (max-width: 1342px) {
+    #hero-image {
+        width: 480px;
+        height: auto;
     }
 }
+
+@media (max-width: 1200px) {
+
+div[class*="SectionOneColumn"] {
+    flex-direction: column;
+}
+
+#hero-image {
+        position: relative;
+        float: right;
+    }
+}
+
+
+
 @media (max-width: 1060px) {
 
 div[class*="SectionOneColumn"] {
@@ -902,6 +1015,20 @@ div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-
     background-color: var(--neutrals-white);
     border-radius: 0px 0px 30px 0px;
     padding: 24px;
+}
+
+.panelArea .panelWidget {
+    padding: 10px 0;
+}
+
+div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat {
+    margin-left: 0;
+}
+
+.footer .social ul {
+    justify-content: center;
+    margin-top: 10px;
+}
 }
 }
 
