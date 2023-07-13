@@ -1,0 +1,43 @@
+<img id="hero-image" src="https://us.v-cdn.net/6037957/uploads/05QZLTTBZ1FG/real-estate-pic.png" >
+<img id="hero-graphic1" src="https://us.v-cdn.net/6037957/uploads/3WUCCCU5B39X/hero-graphic-mask.png" >
+<img id="hero-graphic2" src="https://us.v-cdn.net/6037957/uploads/RX2E8OP87ORC/hero-graphic-2.png" >
+<div id="clearfix" style="clear: both;"></div>
+<style id="subCommunityStyling">
+    div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"]::before {
+        content: 'Kaplan Community BETA';
+        position: absolute;
+        top: 20px;
+        left: 40px;
+        font-family: Open Sans;
+        color: #fff;
+        font-weight: 400;
+    }
+
+    div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div h5 {
+        color: var(--neutrals-white) !important;
+    }
+</style>
+<script>
+var bannerElm = window.document.querySelector('div[class*="Banner-styles-root"]');
+var heroImage = customHtmlRoot.shadowRoot.querySelector('#hero-image');
+var heroGraphic1 = customHtmlRoot.shadowRoot.querySelector('#hero-graphic1');
+var heroGraphic2 = customHtmlRoot.shadowRoot.querySelector('#hero-graphic2');
+var head = window.document.querySelector('head');
+const clearFixElm = customHtmlRoot.shadowRoot.querySelector('#clearfix');
+bannerElm.append(heroImage);
+bannerElm.append(heroGraphic1);
+bannerElm.append(heroGraphic2);
+bannerElm.append(clearFixElm);
+var subCommunityLabel = customHtmlRoot.shadowRoot.querySelector('#subCommunityStyling');
+console.log('subcommlabel', subCommunityLabel);
+head.append(subCommunityLabel);
+    var itemSpacer = window.document.querySelectorAll('div[class*="gridItemSpacer"]');
+
+    var spacerArray = Array.from(itemSpacer);
+    for ( i = 0; i < spacerArray.length; i++) {
+        var index = spacerArray[i].closest('div[class*="gridItemWidthConstraint"]');
+        spacerArray[i].closest('div[class*="gridItemWidthConstraint"]').style.display = 'none';
+    }
+    
+
+</script>

@@ -1,0 +1,89 @@
+<div class="cta-section">
+    <div class="image-content"><img src="https://us.v-cdn.net/6037957/uploads/DTOW5XTU2LXZ/cta-img.png"></div>
+    <div class="text-content">
+        <h5>Label</h5>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pulvinar sem ut ultricies laoreet facilisis.</h2>
+        <p>Mattis bibendum nec ullamcorper nam amet in faucibus nec. Bibendum non nullam id risus posuere gravida.</p>
+        <a href="#needsLink">CTA Button</a>
+    </div>
+</div>
+<style>
+    .cta-section {
+    background-color: #00491e;
+    padding: 64px calc(50% - 720px);
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cta-section::before {
+    content: '';
+    width: 473px;
+    height: 380px;
+    position: absolute;
+    top: 0;
+    right: calc(50% - 800px);
+    background-image: url('https://us.v-cdn.net/6037957/uploads/JNUFN4UQBWW8/cta-graphic.png');
+}
+
+.cta-section .image-content {
+    position: relative;
+    z-index: 5;
+}
+.cta-section .text-content  {
+    color: #fff;
+    margin-right: 96px;
+    max-width: 588px;
+}
+
+.cta-section .text-content h5 {
+    font-size: 16px;
+    font-family: Merriweather;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.cta-section .text-content h2 {
+    font-size: 34px;
+    font-family: Merriweather;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.cta-section .text-content p {
+    font-size: 16px;
+    font-family: Open Sans;
+    margin: 0;
+    margin-bottom: 32px;
+}
+
+.cta-section .text-content a {
+    border: 2px solid #fff;
+    border-radius: 96px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-family: Open Sans;
+    line-height: 100%;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.cta-section .text-content a:hover, .cta-section .text-content a:focus {
+    transition: 0.3s;
+    background-color: #fff;
+    color: #00491e;
+}
+
+@media (max-width: 1060px) {
+    .cta-section {
+        flex-direction: column;
+    }
+
+    .cta-section .image-content {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+}
+</style>

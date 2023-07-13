@@ -1,0 +1,162 @@
+{
+    "layout": [
+        {
+            "$hydrate": "react.section.full-width",
+            "children": [
+                {
+                    "$hydrate": "react.app-banner",
+                    "showDescription": true,
+                    "showSearch": true,
+                    "background": {
+                        "useOverlay": true
+                    },
+                    "title": "Financial Analysts Subcommunity",
+                    "description": "Fermentum mi sagittis magna viverra lacus donec. Orci placerat sapien pellentesque felis aliquet dolor cum. Ut faucibus lacus ullamcorper nulla."
+                }
+            ]
+        },
+        {
+            "$hydrate": "react.section.full-width",
+            "children": [
+                {
+                    "$hydrate": "react.sitetotals",
+                    "apiParams": {
+                        "counts": [
+                            {
+                                "recordType": "user",
+                                "label": "Members"
+                            },
+                            {
+                                "recordType": "post",
+                                "label": "Posts"
+                            },
+                            {
+                                "recordType": "onlineUser",
+                                "label": "Online Users"
+                            },
+                            {
+                                "recordType": "discussion",
+                                "label": "Discussions",
+                                "isHidden": true
+                            },
+                            {
+                                "recordType": "comment",
+                                "label": "Comments",
+                                "isHidden": true
+                            },
+                            {
+                                "recordType": "question",
+                                "label": "Questions",
+                                "isHidden": true
+                            }
+                        ]
+                    },
+                    "labelType": "both",
+                    "containerOptions": {
+                        "alignment": "center"
+                    }
+                }
+            ]
+        },
+        {
+            "$hydrate": "react.section.2-columns",
+            "mainBottom": [
+                {
+                    "$hydrate": "react.html",
+                    "html": "<img id=\"hero-image\" src=\"https://us.v-cdn.net/6037957/uploads/05QZLTTBZ1FG/real-estate-pic.png\" >\n<img id=\"hero-graphic1\" src=\"https://us.v-cdn.net/6037957/uploads/3WUCCCU5B39X/hero-graphic-mask.png\" >\n<img id=\"hero-graphic2\" src=\"https://us.v-cdn.net/6037957/uploads/RX2E8OP87ORC/hero-graphic-2.png\" >\n<div id=\"clearfix\" style=\"clear: both;\"></div>\n<style id=\"subCommunityStyling\">\n    div[class*=\"Banner-styles-root\"] div[class*=\"Banner-styles-contentContainer\"]::before {\n        content: 'Kaplan Community BETA';\n        position: absolute;\n        top: 20px;\n        left: 40px;\n        font-family: Open Sans;\n        color: #fff;\n        font-weight: 400;\n    }\n\n    div[class*=\"twoColumnLayout-rightColumn\"] .panelArea > div:nth-of-type(4) > div h5 {\n        color: var(--neutrals-white) !important;\n    }\n</style>",
+                    "javascript": "var bannerElm = window.document.querySelector('div[class*=\"Banner-styles-root\"]');\nvar heroImage = customHtmlRoot.shadowRoot.querySelector('#hero-image');\nvar heroGraphic1 = customHtmlRoot.shadowRoot.querySelector('#hero-graphic1');\nvar heroGraphic2 = customHtmlRoot.shadowRoot.querySelector('#hero-graphic2');\nvar head = window.document.querySelector('head');\nconst clearFixElm = customHtmlRoot.shadowRoot.querySelector('#clearfix');\nbannerElm.append(heroImage);\nbannerElm.append(heroGraphic1);\nbannerElm.append(heroGraphic2);\nbannerElm.append(clearFixElm);\nvar subCommunityLabel = customHtmlRoot.shadowRoot.querySelector('#subCommunityStyling');\nconsole.log('subcommlabel', subCommunityLabel);\nhead.append(subCommunityLabel);\n    var itemSpacer = window.document.querySelectorAll('div[class*=\"gridItemSpacer\"]');\n\n    var spacerArray = Array.from(itemSpacer);\n    for ( i = 0; i < spacerArray.length; i++) {\n        var index = spacerArray[i].closest('div[class*=\"gridItemWidthConstraint\"]');\n        spacerArray[i].closest('div[class*=\"gridItemWidthConstraint\"]').style.display = 'none';\n    }\n    \n",
+                    "name": "Banner Assets"
+                },
+                {
+                    "$hydrate": "react.categories",
+                    "apiParams": {
+                        "filter": "none",
+                        "limit": "3"
+                    },
+                    "itemOptions": {
+                        "display": {
+                            "name": true,
+                            "description": true,
+                            "counts": true
+                        },
+                        "contentType": "title-description-icon",
+                        "fallbackIcon": "https://us.v-cdn.net/6037957/uploads/UYXAI8W4GN6G/category-icon.png"
+                    }
+                },
+                {
+                    "$hydrate": "react.html",
+                    "html": "<h2>Discussions</h2>",
+                    "name": "Discussion Title"
+                },
+                {
+                    "$hydrate": "react.tabs",
+                    "limit": 5,
+                    "tabConfiguration": [
+                        {
+                            "label": "Latest Discussions",
+                            "tabPresetID": "recent-discussions"
+                        },
+                        {
+                            "label": "Popular",
+                            "tabPresetID": "trending-discussions"
+                        },
+                        {
+                            "label": "Unanswered",
+                            "tabPresetID": "unanswered-questions"
+                        }
+                    ]
+                }
+            ],
+            "secondaryBottom": [
+                {
+                    "$hydrate": "react.newpost",
+                    "asOwnButtons": [],
+                    "excludedButtons": []
+                },
+                {
+                    "$hydrate": "react.quick-links",
+                    "title": "Quick Links"
+                },
+                {
+                    "$hydrate": "react.html",
+                    "name": "Featured Content",
+                    "html": "<div class=\"featured-content\">\n    <div class=\"image-content\"><img src=\"https://us.v-cdn.net/6037957/uploads/Q3NHU5FYUJEL/featured-article.png\"></div>\n    <div class=\"text-content\">\n        <h3>Recommended article title lorem ipsum dolor sit amet consectetur</h3>\n        <p>Integer ornare dictum eu pulvinar sed nisi tristique vel. Aliquam fringilla sem sagittis diam nullam aliquam.</p>\n    </div>\n    </div>",
+                    "css": ".featured-content {\n    display: flex;\n    flex-direction: column;\n}\n\n.featured-content .image-content {\n    border-radius: 0 30px 0 0;\n    overflow: hidden;\n    background-color: var(--neutrals-white);\n}\n\n\n.featured-content .image-content img {\n    width: 100%;\n}\n\n.featured-content .text-content {\n    padding: 24px;\n    padding-bottom: 15px;\n    background-color: var(--neutrals-white);\n}\n\n.featured-content .text-content h3 {\n    font-size: 18px;\nfont-family: Merriweather;\nfont-weight: 300;\nline-height: 150%; \ncolor: var(--neutrals-black-grey);\nmargin: 0;\nmargin-bottom: 8px;\n}\n\n.featured-content .text-content p {\n    font-size: 14px;\nfont-family: Open Sans;\nline-height: 160%; \ncolor: var(--neutrals-black-grey);\n}"
+                },
+                {
+                    "$hydrate": "react.online",
+                    "style": "pictures"
+                },
+                {
+                    "$hydrate": "react.leaderboard",
+                    "apiParams": {
+                        "slotType": "a",
+                        "leaderboardType": "reputation",
+                        "filter": "none",
+                        "limit": "4",
+                        "includedRoleIDs": [],
+                        "excludedRoleIDs": []
+                    },
+                    "title": "Top Contributors"
+                },
+                {
+                    "$hydrate": "react.html",
+                    "html": "<div class=\"html-promo\">\n<img src=\"https://us.v-cdn.net/6037957/uploads/49W90J71AO1P/image.png\">\n</div>",
+                    "css": ".html-promo {\n    background-color: var(--neutrals-darkest-medium-grey);\n    border-radius: 10px;\n}",
+                    "name": "HTML Promo Space"
+                }
+            ]
+        },
+        {
+            "$hydrate": "react.section.full-width",
+            "children": [
+                {
+                    "$hydrate": "react.html",
+                    "html": "<div class=\"cta-section\">\n    <div class=\"image-content\"><img src=\"https://us.v-cdn.net/6037957/uploads/DTOW5XTU2LXZ/cta-img.png\"></div>\n    <div class=\"text-content\">\n        <h5>Label</h5>\n        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pulvinar sem ut ultricies laoreet facilisis.</h2>\n        <p>Mattis bibendum nec ullamcorper nam amet in faucibus nec. Bibendum non nullam id risus posuere gravida.</p>\n        <a href=\"#needsLink\">CTA Button</a>\n    </div>\n</div>",
+                    "css": ".cta-section {\n    background-color: #00491e;\n    padding: 64px calc(50% - 720px);\n    position: relative;\n    display: flex;\n    flex-direction: row-reverse;\n}\n\n.cta-section::before {\n    content: '';\n    width: 473px;\n    height: 380px;\n    position: absolute;\n    top: 0;\n    right: calc(50% - 800px);\n    background-image: url('https://us.v-cdn.net/6037957/uploads/JNUFN4UQBWW8/cta-graphic.png');\n}\n\n.cta-section .image-content {\n    position: relative;\n    z-index: 5;\n}\n.cta-section .text-content  {\n    color: #fff;\n    margin-right: 96px;\n    max-width: 588px;\n}\n\n.cta-section .text-content h5 {\n    font-size: 16px;\n    font-family: Merriweather;\n    margin: 0;\n    margin-bottom: 8px;\n}\n\n.cta-section .text-content h2 {\n    font-size: 34px;\n    font-family: Merriweather;\n    margin: 0;\n    margin-bottom: 16px;\n}\n\n.cta-section .text-content p {\n    font-size: 16px;\n    font-family: Open Sans;\n    margin: 0;\n    margin-bottom: 32px;\n}\n\n.cta-section .text-content a {\n    border: 2px solid #fff;\n    border-radius: 96px;\n    padding: 14px 24px;\n    font-size: 16px;\n    font-family: Open Sans;\n    line-height: 100%;\n    text-decoration: none;\n    color: #fff;\n    font-weight: 600;\n}\n\n.cta-section .text-content a:hover, .cta-section .text-content a:focus {\n    transition: 0.3s;\n    background-color: #fff;\n    color: #00491e;\n}\n\n@media (max-width: 1060px) {\n    .cta-section {\n        flex-direction: column;\n    }\n\n    .cta-section .image-content {\n        display: flex;\n        justify-content: center;\n        margin-bottom: 15px;\n    }\n}",
+                    "name": "CTA Section"
+                }
+            ]
+        }
+    ]
+}
