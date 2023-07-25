@@ -1,3 +1,6 @@
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GGQRCQG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 <style id="stylesheet" rel="stylesheet" type="text/css">
 
     body {
@@ -83,11 +86,11 @@ div[class*="homeWidgetItem-iconWrap"] img {
     max-height: 52px;
 }
 /* Adding the styling to two grey */
-html body
-div[class*="twoColumnLayout-WidgetLayout"]  {
+html body div[class*="twoColumnLayout-WidgetLayout"]  {
     background: #efefef;
     margin-top: 0 !important;
     margin-bottom: 0;
+    padding-bottom: 45px;
 }
 
 
@@ -95,8 +98,16 @@ div[class*="twoColumnLayout-WidgetLayout"] div[class*="HomeWidgetContainer-style
     margin: 0 !important;
      padding: 0; 
 }
+
+div[class*="twoColumnLayout-WidgetLayout"] div[class*="widgetWithContainer-HomeWidgetContainer-styles-root"] {
+    padding-top: 16px;
+}
 div[class*="twoColumnLayout-WidgetLayout"] div[class*="panelWidgetStyles-rootpanelWidget"] {
     padding: 0;
+}
+
+div[class*="HomeWidgetContainer-styles-grid"] {
+    margin-top: 0;
 }
 
 /* Styling for Discussions on Homepage */
@@ -156,7 +167,11 @@ li.pageBoxNoCompat a[class*="tag"],
     color: var(--core-purple);
 }
 
-
+li.pageBoxNoCompat a[class*="tag"]:hover,
+li.pageBoxNoCompat a[class*="tag"]:focus  {
+    background:var(--core-purple);
+    color:var(--neutrals-white);
+}
 
 
 li.pageBoxNoCompat span[class*="tag"] {
@@ -286,7 +301,7 @@ div[class*="Banner-styles-root"] > div[class*="bannerContainer"]:only-child  {
     flex-basis: 100%;
 }
 
-div[class*="Banner-styles-root"]::before {
+/* div[class*="Banner-styles-root"]::before {
     content: '';
     width: 340px;
     height: 482px;
@@ -313,7 +328,7 @@ background-repeat: no-repeat;
 background-size: 100%;
 background-position: bottom;
 }
-
+ */
 div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] {
     padding: 69px 0px 70px;
 }
@@ -428,26 +443,28 @@ div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
 
 
 table[class*="LeaderboardWidget-styles-table"] {
-    margin: 0px 15px;
+    margin: 0px;
 }
 
 table[class*="LeaderboardWidget-styles-table"] tr {
     border-bottom: 1px solid var(--neutrals-light-grey);
     position: relative;
+    height: 60px;
 }
 
 span[class*="LeaderboardWidget-styles-userStyle"] {
     padding-top: 0;
+    padding-left: 10px;
 }
 
 table[class*="LeaderboardWidget-styles-table"] tr td:nth-of-type(2) {
     position: absolute;
     bottom: 10px;
-    left: 50px;
+    left: 60px;
     padding: 0 10px;
     border: 1px solid var(--core-purple);
     border-radius: 48px;
-    line-height: 150%;
+    line-height: 100%;
     font-size: 12px;
     font-weight: 400;
     font-family: Open Sans;
@@ -479,7 +496,7 @@ table[class*="LeaderboardWidget-styles-table"] tr:nth-of-type(1)::before {
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-    left: -14px;
+    left: 0px;
     font-family: Open Sans;
 }
 
@@ -497,7 +514,7 @@ table[class*="LeaderboardWidget-styles-table"] tr:nth-of-type(2)::before {
     transform: translateY(-50%);
     position: absolute;
     z-index: 10;
-    left: -14px;
+    left: 0px;
     font-family: Open Sans;
 }
 
@@ -515,7 +532,7 @@ table[class*="LeaderboardWidget-styles-table"] tr:nth-of-type(3)::before {
     transform: translateY(-50%);
     position: absolute;
     z-index: 10;
-    left: -14px;
+    left: 0px;
     font-family: Open Sans;
 }
 
@@ -533,7 +550,7 @@ table[class*="LeaderboardWidget-styles-table"] tr:nth-of-type(4)::before {
     transform: translateY(-50%);
     position: absolute;
     z-index: 10;
-    left: -14px;
+    left: 0px;
     font-family: Open Sans;
 }
 
@@ -575,6 +592,23 @@ transition: 0.3s;
     padding-bottom: 0;
 }
 
+div.Panel-main .pageBox .Box.Tags ul.TagCloud, ul[class*="ContributionItem"] {
+    padding: 24px !important;
+    padding-top: 0 !important;
+    background-color: var(--neutrals-white);
+    margin: 0;
+}
+
+.Panel ul[class*="ContributionItem"] {
+    margin-top: 0;
+    border-radius: 0 0 30px 0;
+}
+
+
+.Panel ul[class*="ContributionItem"] li[class*="ContributionItem"] {
+    margin-left: 14px;
+}
+
 div.Panel-main .pageBox  div[class*="quickLinks"] div[class*="PageBox-boxClass"]  {
     background-color: var(--neutrals-white);
     border-radius: 0 0 0 30px;
@@ -595,13 +629,22 @@ div.Panel-main .pageBox  div[class*="quickLinks"] div[class*="PageBox-boxClass"]
     padding-bottom: 0;
 }
 
-div.Panel-main .pageBox .Box.Tags ul.TagCloud {
+div.Panel-main .pageBox .Box.Tags ul.TagCloud, ul[class*="ContributionItem"] {
     padding: 24px !important;
     padding-top: 0 !important;
     background-color: var(--neutrals-white);
     margin: 0;
 }
 
+.Panel ul[class*="ContributionItem"] {
+    margin-top: 0;
+    border-radius: 0 0 30px 0;
+}
+
+
+.Panel ul[class*="ContributionItem"] li[class*="ContributionItem"] {
+    margin-left: 14px;
+}
 
 div.Panel-main .pageBox .Box.Tags ul.TagCloud li {
     border: 0;
@@ -624,19 +667,33 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus  {
 
 div.Panel-main .pageBox .Box.Tags ul.TagCloud li a .Count {
     transition: 0.3s;
+    line-height: 15px;
+    padding: 0 1px;
+    background-color: var(--neutrals-light-grey);
+    color: var(--core-purple);
+    border: 1px solid var(--core-purple);
+    margin: 1px 0;
+}
+
+div[class*="Notice-styles-root"] {
+    border-color: var(--core-purple);
+    color: var(--core-purple);
+    border-radius: 10px;
 }
 
 div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:hover .Count,
 div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
     transition: 0.3s;
-    background-color:var(--neutrals-white);
+    background-color: var(--neutrals-light-grey);
+    border-color:var(--core-purple);
     color:var(--core-purple);
 }
 
 
 .TagCloud li.TagCloud-Item.TagCloud-Item.TagCloud-Item a .Count, .PanelInfo.PanelCategories li .Count {
-    background-color: var(--core-purple);
-    color: var(--neutrals-white);
+    background-color: var(--neutrals-light-grey);
+    border-color:var(--core-purple);
+    color:var(--core-purple);
 }
 
 .PanelInfo.PanelCategories li a:hover .Count {
@@ -882,7 +939,7 @@ body.Section-Profile .ProfileOptions .Button-EditProfile:not([disabled]):not(.fo
 }
 
 
- a.Button.Primary, .groupToolbar a.Button:not([disabled]).Primary
+ html body .FormWrapper .Buttons a.Button.Primary, html body .FormWrapper .Buttons .groupToolbar a.Button:not([disabled]).Primary,html body .FormWrapper  .Buttons input.Button.Primary, button#menu-button--menu
  {
     background-color: var(--kaplan-core-purple-1);
     color: var(--neutrals-white);
@@ -890,7 +947,7 @@ body.Section-Profile .ProfileOptions .Button-EditProfile:not([disabled]):not(.fo
     transition: 0.3s;
 }
 
-a.Button.Primary:hover:not([disabled]), a.Button.Primary:focus:not([disabled]), .groupToolbar a.Button.Primary:hover:not([disabled]), .groupToolbar a.Button.Primary:focus:not([disabled])
+html body .FormWrapper .Buttons a.Button.Primary:hover:not([disabled]),  html body .FormWrapper .Buttons a.Button.Primary:focus:not([disabled]),html body .FormWrapper .Buttons input.Button.Primary:hover:not([disabled]),  html body .FormWrapper .Buttons input.Button.Primary:focus:not([disabled]), .groupToolbar a.Button.Primary:hover:not([disabled]), .groupToolbar a.Button.Primary:focus:not([disabled]),  .Buttons input.Button.Primary:hover,  .Buttons input.Button.Primary:focus,  button#menu-button--menu:hover,  button#menu-button--menu:focus
  {
     background-color: var(--kaplan-core-purple-1);
     color: var(--neutrals-white);
@@ -898,12 +955,14 @@ a.Button.Primary:hover:not([disabled]), a.Button.Primary:focus:not([disabled]), 
     transition: 0.3s;
 }
 
-a.Button.Primary:active:not([disabled]), .groupToolbar a.Button.Primary:active:not([disabled])
+html body .FormWrapper .Buttons a.Button.Primary:active:not([disabled]), .groupToolbar a.Button.Primary:active:not([disabled]), html body .FormWrapper .Buttons input.Button.Primary:active:not([disabled]),  button#menu-button--menu:active
  {
     background-color: var(--kaplan-core-purple-3);
     border-color: var(--kaplan-core-purple-3);
     transition: 0.3s;
 }
+
+
 
 a.MoreWrap, .MoreWrap a, .MorePager a, .more.More, .MoreWrap a.more.More {
     color: var(--kaplan-core-purple-1);
@@ -919,7 +978,8 @@ a.MoreWrap:hover, .MoreWrap a:hover, .MorePager a:hover, .more.More:hover, .More
     color: var(--kaplan-regular-blue-purple);
 }
 
-.FormWrapper .Buttons .Button.DraftButton:not([disabled]) {
+.FormWrapper .Buttons .Button.DraftButton:not([disabled]),.FormWrapper .Buttons a.Button.Cancel
+ {
     display: initial;
     border: 2px solid var(--core-purple);
     background: transparent;
@@ -944,11 +1004,18 @@ html body .Pager .Next {
     border-radius: 10px;
 }
 
+.FormWrapper .Buttons .Button.Cancel[disabled] {
+    border-width: 2px;
+    border-radius: 96px;
+}
+
 .FormWrapper .Buttons .Button.DraftButton:not([disabled]):hover,
-.FormWrapper .Buttons .Button.DraftButton:not([disabled]):focus {
+.FormWrapper .Buttons .Button.DraftButton:not([disabled]):focus,
+.FormWrapper .Buttons a.Button.Cancel:not([disabled]):hover,
+.FormWrapper .Buttons a.Button.Cancel:not([disabled]):focus {
     display: initial;
     border: 2px solid var(--core-purple);
-    background: transparent;
+    background-color: transparent;
     color: var(--core-purple);
     font-size: 16px;
     font-weight: 600;
@@ -958,7 +1025,8 @@ html body .Pager .Next {
     transition: 0.3s;
 }
 
-.FormWrapper .Buttons .Button.DraftButton:not([disabled]):active {
+.FormWrapper .Buttons .Button.DraftButton:not([disabled]):active,
+.FormWrapper .Buttons a.Button.Cancel:not([disabled]):active {
     background-color: var(--kaplan-core-purple-3);
     border-color: var(--kaplan-core-purple-3);
     color: var(--neutrals-white);
@@ -968,6 +1036,38 @@ a, a:hover, a:focus, a:active {
     transition: 0.3s;
 }
 
+
+li[class*="FeaturedCollections"] {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+
+li[class*="FeaturedCollections"] div[class*="ListItemMedia"] {
+    background: transparent;
+    border-radius: 0 30px 0 0;
+}
+
+
+
+li[class*="FeaturedCollections"]  div[class*="contentContainer"] {
+    padding: 16px;
+    background-color: var(--neutrals-white);
+}
+
+
+li[class*="FeaturedCollections"]  h3 a {
+    font-family: 'Merriweather';
+    font-size: 18px;
+    font-weight: 300;
+}
+
+li[class*="FeaturedCollections"]:hover {
+    box-shadow: none;
+}
 
 
 /* responsive */
