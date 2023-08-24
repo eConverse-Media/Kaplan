@@ -73,6 +73,11 @@ div[class*="mainColumn"] .panelWidget {
     padding: 0;
 }
 
+div[class*="mainColumn"] .panelWidget .featured-content {
+    margin: -24px;
+    background-color: #efefef;
+}
+
 
 /* Categories */
 
@@ -229,30 +234,38 @@ div.Panel-main div[class*="quickLinks"] div[class*="PageBox-boxClass"]  {
     border-radius: 0 0 30px 0;
 }
 
-/* Styling for who's online on homepage */
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div {
-    background-color: var(--neutrals-black-grey);
-    border-radius: 30px 0 0 0;
-    padding: 24px;
-}
 
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div .pageHeadingBox.pageHeadingBox.pageHeadingBox h5 {
-    color: var(--neutrals-white);
-    font-weight: 300;
-}
-
-
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4)  span[class*="PageHeadingBox-styles-titleCount"] {
-    color:var(--neutrals-white);
-}
 
  /* Quicklinks styling */
+
+ div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
+    max-height: unset;
+    padding-top: 113px;
+}
+
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div {
+    background-color: var(--neutrals-white);
+    border-radius: 0px 0px 30px 0px;
+    padding: 24px;
+}
 
 div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(5) > div {
     background-color: var(--neutrals-white);
     border-radius: 0px 0px 30px 0px;
     padding: 24px;
 }
+
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(6) > div {
+    background-color: var(--neutrals-white);
+    border-radius: 0px 0px 30px 0px;
+    padding: 24px;
+}
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div.html-parent > div {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+}
+
 
 /* Styling for who's online on homepage */
 button[class*="newPostMenuStyles-button"] {
@@ -263,6 +276,23 @@ button[class*="newPostMenuStyles-button"] {
 
 button[class*="newPostMenuStyles-button"]  div[class*="buttonContents"] {
     width: initial !important;
+}
+
+/* Styling for who's online on homepage */
+div[class*="twoColumnLayout-WidgetLayout"] div.who-online-style  div[class*="widgetWithContainer-HomeWidgetContainer-styles-root"] {
+    background-color: var(--neutrals-black-grey);
+    border-radius: 30px 0 0 0;
+    padding: 24px;
+}
+
+div[class*="twoColumnLayout-WidgetLayout"] div.who-online-style  div[class*="widgetWithContainer-HomeWidgetContainer-styles-root"] div[class*="pageHeadingStyles-main"] h5 {
+    color: var(--neutrals-white);
+    font-weight: 300;
+}
+
+
+div[class*="twoColumnLayout-WidgetLayout"] div.who-online-style  div[class*="widgetWithContainer-HomeWidgetContainer-styles-root"]  span[class*="PageHeadingBox-styles-titleCount"] {
+    color:var(--neutrals-white);
 }
 
 
@@ -407,11 +437,6 @@ div[class*="SectionOneColumn-classes"] > div > div {
 
 .css-o8mxt-LeaderboardWidget-styles-cell {
     min-width: unset;
-}
-
-div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
-    max-height: unset;
-    padding-top: 130px;
 }
 
 
@@ -1095,6 +1120,11 @@ div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-
 
 div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-type(4)  span[class*="PageHeadingBox-styles-titleCount"] {
     color:var(--neutrals-white);
+}
+
+div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
+  max-height: unset;
+  padding-top: 0px;
 }
 
  /* Quicklinks styling */

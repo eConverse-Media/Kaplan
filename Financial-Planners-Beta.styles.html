@@ -15,7 +15,7 @@
 
     /* CSS Variables */
 :root {
-    --core-purple: #042C54;
+    --core-purple: #240F6E;
     --neutrals-white: #fff;
     --neutrals-light-grey: #efefef;
     --neutrals-grey: #d9d9d8;
@@ -26,7 +26,7 @@
     --accent-red-1: #9e1539;
     --accent-green-1: #00491e;
     --kaplan-deep-blue-purple: #082ECF;
-    --kaplan-core-purple-1: #042C54;
+    --kaplan-core-purple-1: #240F6E;
     --kaplan-core-purple-3: #7c6ca7;
     --kaplan-regular-blue-purple: #005DE8;
 }
@@ -229,24 +229,20 @@ div.Panel-main div[class*="quickLinks"] div[class*="PageBox-boxClass"]  {
     border-radius: 0 0 30px 0;
 }
 
-/* Styling for who's online on homepage */
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div {
-    background-color: var(--neutrals-black-grey);
-    border-radius: 30px 0 0 0;
-    padding: 24px;
-}
 
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div .pageHeadingBox.pageHeadingBox.pageHeadingBox h5 {
-    color: var(--neutrals-white);
-    font-weight: 300;
-}
-
-
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4)  span[class*="PageHeadingBox-styles-titleCount"] {
-    color:var(--neutrals-white);
-}
 
  /* Quicklinks styling */
+
+ div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
+    max-height: unset;
+    padding-top: 63px;
+}
+
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div {
+    background-color: var(--neutrals-white);
+    border-radius: 0px 0px 30px 0px;
+    padding: 24px;
+}
 
 div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(5) > div {
     background-color: var(--neutrals-white);
@@ -263,6 +259,23 @@ button[class*="newPostMenuStyles-button"] {
 
 button[class*="newPostMenuStyles-button"]  div[class*="buttonContents"] {
     width: initial !important;
+}
+
+/* Styling for who's online on homepage */
+div[class*="twoColumnLayout-WidgetLayout"] div.who-online-style  div[class*="widgetWithContainer-HomeWidgetContainer-styles-root"] {
+    background-color: var(--neutrals-black-grey);
+    border-radius: 30px 0 0 0;
+    padding: 24px;
+}
+
+div[class*="twoColumnLayout-WidgetLayout"] div.who-online-style  div[class*="widgetWithContainer-HomeWidgetContainer-styles-root"] div[class*="pageHeadingStyles-main"] h5 {
+    color: var(--neutrals-white);
+    font-weight: 300;
+}
+
+
+div[class*="twoColumnLayout-WidgetLayout"] div.who-online-style  div[class*="widgetWithContainer-HomeWidgetContainer-styles-root"]  span[class*="PageHeadingBox-styles-titleCount"] {
+    color:var(--neutrals-white);
 }
 
 
@@ -301,34 +314,6 @@ div[class*="Banner-styles-root"] > div[class*="bannerContainer"]:only-child  {
     flex-basis: 100%;
 }
 
-/* div[class*="Banner-styles-root"]::before {
-    content: '';
-    width: 340px;
-    height: 482px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background-image: url('https://us.v-cdn.net/6037957/uploads/3WUCCCU5B39X/hero-graphic-mask.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    z-index: 1;
-    background-position: bottom center;
-}
-
-div[class*="Banner-styles-root"]::after {
-    content: '';
-width: 296px;
-height: 297px;
-position: absolute;
-left: 0;
-bottom: 0;
-background-image: url('https://us.v-cdn.net/6037957/uploads/RX2E8OP87ORC/hero-graphic-2.png');
-background-size: cover;
-background-repeat: no-repeat;
-background-size: 100%;
-background-position: bottom;
-}
- */
 div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] {
     padding: 69px 0px 70px;
 }
@@ -349,6 +334,7 @@ div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] h1
     line-height: 130%;
     font-size: 38px;
     margin-bottom: 16px;
+    text-shadow: none;
 }
 
 div[class*="Banner-styles-searchContainer"] {
@@ -423,23 +409,17 @@ div[class*="SectionOneColumn-classes"] > div > div {
 }
 
 
-/* Making the icon follow global nav text styling
 .meBox-buttonContent svg path,
 .flyouts button#flyout-24-handle span[class*="subcommunityChooser-toggle"] svg path,
 .flyouts button#flyout-24-handle span[class*="subcommunityChooser-toggle"] svg polygon
  {
     fill: var(--core-purple);
-} */
+}
 
 /*leaderboard widget*/
 
 .css-o8mxt-LeaderboardWidget-styles-cell {
     min-width: unset;
-}
-
-div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
-    max-height: unset;
-    padding-top: 130px;
 }
 
 
@@ -593,6 +573,23 @@ transition: 0.3s;
     padding-bottom: 0;
 }
 
+div.Panel-main .pageBox .Box.Tags ul.TagCloud, ul[class*="ContributionItem"] {
+    padding: 24px !important;
+    padding-top: 0 !important;
+    background-color: var(--neutrals-white);
+    margin: 0;
+}
+
+.Panel ul[class*="ContributionItem"] {
+    margin-top: 0;
+    border-radius: 0 0 30px 0;
+}
+
+
+.Panel ul[class*="ContributionItem"] li[class*="ContributionItem"] {
+    margin-left: 14px;
+}
+
 div.Panel-main .pageBox  div[class*="quickLinks"] div[class*="PageBox-boxClass"]  {
     background-color: var(--neutrals-white);
     border-radius: 0 0 0 30px;
@@ -653,6 +650,9 @@ div.Panel-main .pageBox .Box.Tags ul.TagCloud li a .Count {
     transition: 0.3s;
     line-height: 15px;
     padding: 0 1px;
+    background-color: var(--neutrals-light-grey);
+    color: var(--core-purple);
+
 }
 
 div[class*="Notice-styles-root"] {
@@ -664,14 +664,15 @@ div[class*="Notice-styles-root"] {
 div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:hover .Count,
 div.Panel-main .pageBox .Box.Tags ul.TagCloud li a:focus .Count {
     transition: 0.3s;
-    background-color:var(--neutrals-white);
+    background-color: var(--neutrals-light-grey);
+    border-color:var(--core-purple);
     color:var(--core-purple);
 }
 
 
 .TagCloud li.TagCloud-Item.TagCloud-Item.TagCloud-Item a .Count, .PanelInfo.PanelCategories li .Count {
     background-color: var(--neutrals-light-grey);
-    color: var(--core-purple);
+    color:var(--core-purple);
 }
 
 .PanelInfo.PanelCategories li a:hover .Count {
@@ -1102,6 +1103,11 @@ div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-
 
 div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-type(4)  span[class*="PageHeadingBox-styles-titleCount"] {
     color:var(--neutrals-white);
+}
+
+div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
+  max-height: unset;
+  padding-top: 0px;
 }
 
  /* Quicklinks styling */

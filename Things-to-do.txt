@@ -1,0 +1,7 @@
+-Kaplan
+--Get Admin access to all vanilla sites
+-Teaching Strategies
+-Setup DS Dev Server
+-Work on Thrive
+-Higher Logic WordPress Dev
+-Support Tickets
