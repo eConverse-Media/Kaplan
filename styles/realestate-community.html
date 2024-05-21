@@ -3,10 +3,6 @@
 
 <style id="stylesheet" rel="stylesheet" type="text/css">
 
-    html {
-        overflow-x: hidden;
-    }
-
     body {
         overflow-x: hidden;
         font-family: 'Open Sans';
@@ -76,7 +72,6 @@ html body .bg-grey {
 div[class*="mainColumn"].hasAdjacentPanel {
     padding-top: 55px;
 }
-
 
 div[class*="mainColumn"] .panelWidget {
     padding: 0;
@@ -243,8 +238,16 @@ div.Panel-main div[class*="quickLinks"] div[class*="PageBox-boxClass"]  {
     border-radius: 0 0 30px 0;
 }
 
-div[class*="PageBox-boxClass"] {
-    box-shadow: none;
+div.rightColumn div[class*="quickLinks"] div[class*="pageBoxNoCompat"] {
+    padding: 0;
+}
+
+div[class*="Section-styles-secondaryPanelWidget-quickLinks"] li {
+    border-bottom: 1px solid var(--neutrals-light-grey);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
 }
 
 
@@ -281,7 +284,7 @@ div[class*="twoColumnLayout-rightColumn"] .panelArea > div.html-parent > div {
 
 .BoxCategories {
     background-color: var(--neutrals-white);
-    border-radius: 0 0 0 30px;
+    border-radius: 0 0 0px 30px;
 }
 
 .Section-Discussion .BoxCategories .PanelCategories {
@@ -346,11 +349,6 @@ div[class*="Banner-styles-root"] {
     position: relative;
 }
 
-
-
-div[class*="Banner-styles-root"] div[class*="fullgutter"] {
-    padding-left: 26px;
-}
 
 
 
@@ -609,14 +607,6 @@ color: #000;
 transition: 0.3s;
 }
 
-/* Follow Button */
-
-div[class*="SectionOneColumn-classes"] > div > div[class*="FollowDropDown"] {
-    margin-top: 0;
-    justify-content: flex-start;
-    margin-left: 30px;
-}
-
 /* Sidebar */
 .Frame .Panel .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox  {
     background-color: var(--neutrals-white);
@@ -648,11 +638,6 @@ div.Panel-main .pageBox  div[class*="quickLinks"] div[class*="PageBox-boxClass"]
     padding: 24px;
     padding-top: 0;
 }
-
-div.rightColumn  div[class*="quickLinks"] div[class*="pageBoxNoCompat"]  {
-    padding: 0;
-}
-
 
 .Frame .Box.Tags .Panel .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox {
     background-color: var(--neutrals-white);
@@ -759,10 +744,6 @@ div[class*="Section-styles-secondaryPanelWidget-quickLinks"] {
 
 div[class*="Section-styles-secondaryPanelWidget-quickLinks"] li {
     border-bottom: 1px solid var(--neutrals-light-grey);
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0;
 }
 .PanelInfo.PanelCategories .Active {
     background: transparent;
@@ -1109,6 +1090,7 @@ li[class*="FeaturedCollections"]:hover {
     box-shadow: none;
 }
 
+
 .Frame .Panel.Panel-main .pageBox ul {
     background-color: var(--neutrals-white);
 }
@@ -1191,7 +1173,7 @@ div[class*="twoColumnLayout-mainColumn"] .panelArea:nth-of-type(3) > div:nth-of-
 
 div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
   max-height: unset;
-  padding-top: 0px;
+  padding-top: 125px;
 }
 
  /* Quicklinks styling */
@@ -1210,11 +1192,24 @@ div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat {
     margin-left: 0;
 }
 
+
 .footer .social ul {
     justify-content: center;
     margin-top: 10px;
 }
 }
+
+nav[class*="-breadcrumbs"] {
+    max-width: 475px;
+    padding-right: 16px;
+}
+
+nav[class*="-breadcrumbs"] + div {
+    margin-top: 0;
+    justify-content: start;
+}
+
+
 
 
 

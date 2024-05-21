@@ -3,10 +3,6 @@
 
 <style id="stylesheet" rel="stylesheet" type="text/css">
 
-    html {
-        overflow-x: hidden;
-    }
-
     body {
         overflow-x: hidden;
         font-family: 'Open Sans';
@@ -72,11 +68,6 @@ html body .bg-grey {
 .no-show {
     display: none;
 }
-
-div[class*="mainColumn"].hasAdjacentPanel {
-    padding-top: 55px;
-}
-
 
 div[class*="mainColumn"] .panelWidget {
     padding: 0;
@@ -243,41 +234,37 @@ div.Panel-main div[class*="quickLinks"] div[class*="PageBox-boxClass"]  {
     border-radius: 0 0 30px 0;
 }
 
-div[class*="PageBox-boxClass"] {
-    box-shadow: none;
-}
-
 
 
  /* Quicklinks styling */
 
  div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
     max-height: unset;
-    padding-top: 113px;
+    padding-top: 40px;
 }
 
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div,
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(1) > div {
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div {
+    background-color: var(--neutrals-white);
     border-radius: 0px 0px 30px 0px;
+    padding: 24px;
 }
 
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(5) > div,
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(2) > div:not([id*="secondaryPanelWidget"])  {
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(5) > div {
+    background-color: var(--neutrals-white);
     border-radius: 0px 0px 30px 0px;
+    padding: 24px;
 }
 
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(6) > div,
-div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(3) > div {
-/*     background-color: var(--neutrals-white); */
+div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(6) > div {
+    background-color: var(--neutrals-white);
     border-radius: 0px 0px 30px 0px;
-/*     padding: 24px; */
+    padding: 24px;
 }
 div[class*="twoColumnLayout-rightColumn"] .panelArea > div.html-parent > div {
     background-color: transparent;
     border-radius: 0;
     padding: 0;
 }
-
 
 .BoxCategories {
     background-color: var(--neutrals-white);
@@ -346,11 +333,6 @@ div[class*="Banner-styles-root"] {
     position: relative;
 }
 
-
-
-div[class*="Banner-styles-root"] div[class*="fullgutter"] {
-    padding-left: 26px;
-}
 
 
 
@@ -609,14 +591,6 @@ color: #000;
 transition: 0.3s;
 }
 
-/* Follow Button */
-
-div[class*="SectionOneColumn-classes"] > div > div[class*="FollowDropDown"] {
-    margin-top: 0;
-    justify-content: flex-start;
-    margin-left: 30px;
-}
-
 /* Sidebar */
 .Frame .Panel .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox  {
     background-color: var(--neutrals-white);
@@ -648,11 +622,6 @@ div.Panel-main .pageBox  div[class*="quickLinks"] div[class*="PageBox-boxClass"]
     padding: 24px;
     padding-top: 0;
 }
-
-div.rightColumn  div[class*="quickLinks"] div[class*="pageBoxNoCompat"]  {
-    padding: 0;
-}
-
 
 .Frame .Box.Tags .Panel .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox {
     background-color: var(--neutrals-white);
@@ -759,10 +728,6 @@ div[class*="Section-styles-secondaryPanelWidget-quickLinks"] {
 
 div[class*="Section-styles-secondaryPanelWidget-quickLinks"] li {
     border-bottom: 1px solid var(--neutrals-light-grey);
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0;
 }
 .PanelInfo.PanelCategories .Active {
     background: transparent;
@@ -1160,6 +1125,12 @@ div[class*="SectionOneColumn"] {
 
 div[class*="SectionOneColumn"] {
     flex-direction: column;
+}
+
+
+div[class*="SectionOneColumn-classes"] > div > div[class*="FollowDropDown"] {
+    margin-top: 16px;
+    margin-left: 0px;
 }
 
 }
