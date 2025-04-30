@@ -266,7 +266,7 @@ button[class*="newPostMenuStyles-button"]  div[class*="buttonContents"] {
 /* Banner */
 
 div[class*="Banner-styles-root"] {
-    background-color: rgb(29, 12, 88);
+    background-color: var(--vnla-primary-color);
     position: relative;
 }
 
@@ -375,7 +375,13 @@ p[class*="Banner-styles-description"] {
     margin-bottom: 32px;
 }
 
-div[class*="SectionOneColumn"] {
+div[class*="SectionOneColumn-classes-root"] {
+    margin-top: 94px;
+    margin-bottom: 24px;
+    display: flex;
+}
+
+div[class*="SectionOneColumn-classes-container"] {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -948,6 +954,8 @@ html body .Pager .Next {
 a, a:hover, a:focus, a:active {
     transition: 0.3s;
 }
+
+
 
 
 
