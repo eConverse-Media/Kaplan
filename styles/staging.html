@@ -112,6 +112,62 @@ main[class*="Section-styles-main"] > div[class*="twoColumnLayoud-panel"] > {
     padding-top: 0px;
 }
 
+main[class*="Section-styles-main"]  div[class*="Section-panelOffsetClass"] .panelWidget {
+    margin-bottom: 16px;
+}
+
+main[class*="Section-styles-main"]  div[class*="Section-panelOffsetClass"] .panelWidget:not(:has([class*="NewPostMenuDropdown-styles-container"]))  {
+    padding: 16px 16px 18px 16px;
+    border-radius: 8px;
+    background-color: var(--neutrals-white);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.03), 0px 4px 20px 1px rgba(0, 0, 0, 0.05), 0px 6px 8px 0px rgba(0, 0, 0, 0.04);
+}
+
+main[class*="Section-styles-main"]  div[class*="Section-panelOffsetClass"] .panelWidget div[class*="CategoryList-styles-root"] div[style*="flex"] {
+    display: none;
+}
+
+main[class*="Section-styles-main"] div[class*="Section-panelOffsetClass"] .panelWidget div[style="flex: 1 1 0%;"] {
+    display: none;
+}
+
+
+
+main[class*="Section-styles-main"]  div[class*="Section-panelOffsetClass"] .panelWidget div[class*="CategoryList-classes-gridContainer"] div[class*="homeWidgetItem-backgroundContainer"] {
+    min-height: initial;
+}
+
+
+ div[class*="HomeWidgetContainer-styles-root"]:has( div[class*="CategoryList-classes-gridContainer"])  div[class*="HomeWidgetContainer-styles-itemWrapper"],  div[class*="HomeWidgetContainer-styles-root"]:has( div[class*="CategoryList-classes-gridContainer"]),  div[class*="HomeWidgetContainer-styles-root"]:has( div[class*="CategoryList-classes-gridContainer"]) div[class*="HomeWidgetContainer-styles-grid"]   {
+    padding: 0;
+}
+
+div[class*="HomeWidgetContainer-styles-root"] div[class*="CategoryList-classes-gridGroup"] {
+    margin-bottom: 0;
+}
+
+div[class*="HomeWidgetContainer-styles-root"]:has( div[class*="CategoryList-classes-gridContainer"])  div[class*="HomeWidgetContainer-styles-content"] {
+    width: 100%;
+    margin-left: 0;
+    margin-inline-start: 0;
+}
+
+div[class*="CategoryList-classes-gridContainer"] {
+    margin-left: 0;
+}
+
+main[class*="Section-styles-main"] > div[class*="Section-panelOffsetClass"] > .panelWidget > div[class*="HomeWidgetContainer-styles-root"]:has(> div[class*="CategoryList-classes-gridContainer"]) {
+    padding: 0;
+}
+
+a[class*="homeWidgetItem-CategoryList-classes-gridItem"] {
+    overflow: unset;
+}
+
+div[class*="CategoryList-classes-gridGroup"] > div > div[class*="HomeWidgetContainer-styles-gridItem"]:last-of-type a[class*="homeWidgetItem-homeWidgetItem"] > div {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
 /* Styling for Discussions on Homepage */
 
@@ -207,6 +263,14 @@ div[class*="twoColumnLayout-mainColumn"] li p[class*="ListItem-styles-descriptio
 a[class*="homeWidgetItem-homeWidgetItem"] {
     box-shadow: none;
 }
+
+div[class*="CategoryList-classes-gridGroup"] > div >  div[class*="HomeWidgetContainer-styles-gridItem"] a[class*="homeWidgetItem-homeWidgetItem"] > div {
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    margin-bottom: 12px;
+}
+
+
 
  /* Quicklinks styling */
 
