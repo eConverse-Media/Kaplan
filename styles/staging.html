@@ -90,6 +90,29 @@ div[class*="twoColumnLayout-WidgetLayout"] div[class*="panelWidgetStyles-rootpan
     padding: 0;
 }
 
+/* Sidebar Styling */
+
+div[class*="panelArea-overflowFull"] {
+    max-height: unset;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+}
+
+button[class*="NewPostMenuDropdown"] {
+    width: 100%;
+    max-width: unset !important;
+}
+
+button[class*="NewPostMenuDropdown"] > div  {
+    width: unset;
+}
+
+main[class*="Section-styles-main"] > div[class*="twoColumnLayoud-panel"] > {
+    padding-top: 0px;
+}
+
+
 /* Styling for Discussions on Homepage */
 
 div[class*="tab-browse-tabList"] {
@@ -408,10 +431,7 @@ div[class*="SectionOneColumn"] > div > div {
     min-width: unset;
 }
 
-div[class*="twoColumnLayout"] div[class*="panelArea-overflowFull"] {
-    max-height: unset;
-    padding-top: 130px;
-}
+
 
 
 table[class*="LeaderboardWidget-styles-table"] {
@@ -1037,6 +1057,24 @@ div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat {
 }
 }
 
+div[class*="Banner-styles-root"] > div[class*="Banner-styles-bannerContainer"] {
+    position: relative;
+}
 
+div[class*="Banner-styles-root"] > div[class*="Banner-styles-bannerContainer"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+    z-index: 1;
+}
+
+ div[class*="Banner-styles-bannerContainer"]  div[class*="Banner-styles-iconTextAndSearchContainer"] {
+    position: relative;
+    z-index: 5;
+}
 
 </style>
