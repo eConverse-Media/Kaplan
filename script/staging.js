@@ -1,41 +1,29 @@
+// Add FOUC prevention class immediately
+document.documentElement.classList.add('js-fouc');
+
 onVanillaReady(function() {
     // Get access to the root of the header.
-    // THIS IS THE CHANGE
     var themeHeader = document.querySelector("#themeHeader").shadowRoot;
-
-
-
-    // Find the button.
-    //   var heroImage = themeHeader.querySelector("#hero-image");
-    //  var heroGraphic1 = themeHeader.querySelector("#hero-graphic1");
-    //  var heroGraphic2 = themeHeader.querySelector("#hero-graphic2");
-    //  var cardGraphic = themeHeader.querySelector("#card-graphic");
     styleSheet = themeHeader.querySelector("#stylesheet");
 
+    // Create a promise to handle style loading
+    const styleLoadPromise = new Promise((resolve) => {
+        setTimeout(function() {
+            var banner = document.documentElement.querySelector('div[class*="Banner-styles-root"]');
+            var head = document.documentElement.querySelector('head');
+            head.appendChild(styleSheet);
+            
+            // Wait for styles to be applied
+            requestAnimationFrame(() => {
+                resolve();
+            });
+        }, 1);
+    });
 
-
-    setTimeout(function() {
-        var banner = document.documentElement.querySelector('div[class*="Banner-styles-root"]')
-
-        var head = document.documentElement.querySelector('head');
-        head.appendChild(styleSheet);
-        
-
-
-    }, 1);
-
-    /* var cognitoUrl = "https://stg-kaplan-community.auth.us-east-2.amazoncognito.com/page?client_id=4vtk6qm9a0vi5tm1tb94d8176e&redirect_uri=https%3A%2F%2Fkaplanhub.vanillastaging.com%2Fkaplancommunity%2Fentry%2Foauth2&scope=email+openid&response_type=code&state=";
-    if(window.location.href.indexOf('/entry/signin') > -1) {
-        var params = new URL(document.location.toString()).searchParams;
-        var target = params.get("target");
-        var target = params.get("admin");
-        console.log('target', target);
-        if(target) {
-            var encodedString = encodeURIComponent(btoa({"target":"\/entry\/signin?target="+target}));
-            window.location.href = cognitoUrl.replace("page", "login") + encodedString;
-            return;
-        }
-    } */
+    // Remove FOUC class after styles are loaded
+    styleLoadPromise.then(() => {
+        document.documentElement.classList.remove('js-fouc');
+    });
 
     //Move OptIn Language from center to bottom of the page
     if (window.location.href.indexOf('/entry/register') > -1) {
@@ -61,7 +49,6 @@ if(window.location.href.indexOf('/entry/signin') > -1) {
         const updatedJsonString = `{"target":"${targetObj.target}"}`;
         const base64Ecoded = btoa(updatedJsonString);
         var encodedString = encodeURIComponent(base64Ecoded);
-        //window.location.href = cognitoUrl + encodedString;
         console.log(cognitoUrl + encodedString);
     }
 }

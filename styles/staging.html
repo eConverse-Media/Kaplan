@@ -1,4 +1,8 @@
 <style id="stylesheet" rel="stylesheet" type="text/css">
+    /* FOUC Prevention */
+    .js-fouc {
+        visibility: hidden !important;
+    }
 
     body {
         overflow-x: hidden;
@@ -10,7 +14,7 @@
     --core-purple: #240F6E;
     --neutrals-white: #fff;
     --neutrals-light-grey: #efefef;
-    --neutrals-grey: #d9d9d8;
+    --neutrals-grey: #dddee0;
     --neutrals-darkest-medium-grey: #615f66;
     --accent-blue-1: #082ECF;
     --accent-pink-2: #DE1B90;
@@ -76,7 +80,7 @@ div[class*="homeWidgetItem-iconWrap"] img {
 /* Adding the styling to two grey */
 html body
 div[class*="twoColumnLayout-WidgetLayout"]  {
-    background: #efefef;
+    background: #fafafc;
     margin-top: 0 !important;
     margin-bottom: 0;
 }
@@ -131,8 +135,6 @@ main[class*="Section-styles-main"] div[class*="Section-panelOffsetClass"] .panel
     display: none;
 }
 
-
-
 main[class*="Section-styles-main"]  div[class*="Section-panelOffsetClass"] .panelWidget div[class*="CategoryList-classes-gridContainer"] div[class*="homeWidgetItem-backgroundContainer"] {
     min-height: initial;
 }
@@ -170,6 +172,14 @@ div[class*="CategoryList-classes-gridGroup"] > div > div[class*="HomeWidgetConta
     padding-bottom: 0;
 }
 
+div[class*="CategoryList-classes-gridGroup"] > div > div[class*="HomeWidgetContainer-styles-gridItem"] a[class*="homeWidgetItem-homeWidgetItem"] h3{
+    text-align: left;
+    color:  #2D2D2D;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 14px */
+}
 
 /* Styling for Events in Sidebar */
 
@@ -195,6 +205,14 @@ span[class*="-root-Events-classes-eventListDate"] * {
     color: var(--vnla-primary-color);
 }
 
+ul[class*="Events-classes-widgetRoot"] li h4 a p {
+    color: var(--Black, #2D2D2D);
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+}
 
 /* Styling for Discussions on Homepage */
 
@@ -205,8 +223,8 @@ div[class*="tab-browse-tabList"] {
 
 div[class*="tab-browse-tabList"]::after {
     content: '';
-    height: 3px;
-    width: 417px;
+    height: 1px;
+    width: 100%;
     position: absolute;
     bottom: -1px;
     background: var(--neutrals-grey);
@@ -218,8 +236,8 @@ div[class*="tab-browse-tabList"] button {
 }
 
 button[class*="tab-browse-isActive"]::before {
-    background-color: var(--neutrals-black-grey);
-    width: 100%;
+    background-color: var(--vnla-primary-color);
+    width: 100% !important;
     left: 0;
 }
 
@@ -318,6 +336,9 @@ div.Panel-main div[class*="quickLinks"] div[class*="PageBox-boxClass"]  {
     background-color: var(--neutrals-white);
     border-radius: 0 0 30px 0;
 }
+
+/* featured Card Section */
+
 
 /* Styling for who's online on homepage */
 div[class*="twoColumnLayout-rightColumn"] .panelArea > div:nth-of-type(4) > div {
@@ -423,9 +444,7 @@ div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] {
     padding: 69px 0px 70px;
 }
 
-div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] {
-    padding: 69px 0px 70px;
-}
+
 
 
 div[class*="Banner-styles-root"] svg[class*="defaultBannerSVG"] {
@@ -433,13 +452,7 @@ div[class*="Banner-styles-root"] svg[class*="defaultBannerSVG"] {
 }
 
 
-div[class*="Banner-styles-root"] div[class*="Banner-styles-contentContainer"] h1.heading.heading-1 {
-    font-family: Merriweather;
-    font-weight: 300;
-    line-height: 130%;
-    font-size: 38px;
-    margin-bottom: 16px;
-}
+
 
 div[class*="Banner-styles-searchContainer"] {
     height: 52px;
@@ -461,7 +474,6 @@ button#button-5 {
     display: block;
 }
 
-
 div[class*="Banner-styles-searchContainer"]
 button#button-5 svg {
     font-size: 22px;
@@ -475,7 +487,13 @@ div[class*="SearchBar-styles-scope"]{
     display: none;
 }
 
+div[class*="Banner-styles-textAndSearchContainer"] div[class*="SearchBar-styles-content"][class*="Banner-styles-content"].withButton.withScope {
+    border-radius: 60px 0 0 60px;
+}
 
+div[class*="Banner-styles-searchContainer"] button#button-5 {
+    border-radius: 0 60px 60px 0;
+}
 
 div[class*="Banner-styles-descriptionWrap"] {
     margin-bottom: 0;
@@ -490,15 +508,14 @@ p[class*="Banner-styles-description"] {
 }
 
 /* Section 1 */
-
-div[class*="SectionOneColumn-classes-root"] {
+div:has(div[class*="Banner-styles-root"]) ~ div[class*="SectionOneColumn-classes-root"]:nth-child(4) {
     position: relative;
     background: var(--vnla-primary-color);
     padding: 40px 0;
     margin: 0;
 }
 
-div[class*="SectionOneColumn-classes-root"]::before {
+div:has(div[class*="Banner-styles-root"]) ~ div[class*="SectionOneColumn-classes-root"]:nth-child(4)::before {
     content: '';
     position: absolute;
     top: 0;
@@ -509,26 +526,42 @@ div[class*="SectionOneColumn-classes-root"]::before {
     z-index: 1;
 }
 
-div[class*="SectionOneColumn-classes-root"] {
+div:has(div[class*="Banner-styles-root"]) ~ div[class*="SectionOneColumn-classes-root"]:nth-child(4) {
     position: relative;
     z-index: 5;
 }
 
-div[class*="SectionOneColumn-classes-root"] > div {
+div:has(div[class*="Banner-styles-root"]) ~ div[class*="SectionOneColumn-classes-root"]:nth-child(4) > div {
     position: relative;
     z-index: 10;
     display: flex;
     flex-direction: row;
+    gap: 24px;
 }
-
-
-
 
 .meBox-buttonContent svg path,
 .flyouts button#flyout-24-handle span[class*="subcommunityChooser-toggle"] svg path,
 .flyouts button#flyout-24-handle span[class*="subcommunityChooser-toggle"] svg polygon
  {
     fill: var(--core-purple);
+}
+
+/* Sidebar Widgets */
+
+div[class*="Section-panelOffsetClass"] div[class*="panelAreaStyles-root"].panelArea  .pageHeadingBox.pageHeadingBox.pageHeadingBox h5:not(.subtitle) {
+    margin-bottom: 16px !important;
+    color:  #292929;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 21px */
+ }
+
+/*events widget*/
+
+li.pageBoxNoCompat.isFirst::before {
+    content: none;
 }
 
 /*leaderboard widget*/
@@ -898,23 +931,8 @@ body.Profile div.Profile div.About.P section,
 
 /* Profile */
 
-body.Profile div.Profile div.About section h2 {
-    font-family: Merriweather;
-    line-height: 130%;
-    font-weight: 300;
-    color: #000;
-}
 
 /* Default header Styling */
-.Frame .pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox.pageHeadingBox h2,.pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h1:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h2:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h3:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h4:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge h5:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox.isLarge [role="heading"]:not(.subtitle),
-.pageHeadingBox.pageHeadingBox.pageHeadingBox h1:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h2:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h3:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h4:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox h5:not(.subtitle), .pageHeadingBox.pageHeadingBox.pageHeadingBox [role="heading"]:not(.subtitle), h1, h2, h3, h4, h5, h6
- {
-    font-family: 'Merriweather' !important;
-    font-size: 34px;
-    line-height: 130%;
-    font-weight: 300;
-    color: #000;
-}
 
 
 a[class*="homeWidgetItem-homeWidgetItem"] h3 {
@@ -1095,25 +1113,20 @@ a, a:hover, a:focus, a:active {
 }
 
 @media (max-width: 1200px) {
+    div[class*="SectionOneColumn"] {
+        flex-direction: column;
+    }
 
-div[class*="SectionOneColumn"] {
-    flex-direction: column;
-}
-
-#hero-image {
+    #hero-image {
         position: relative;
         float: right;
     }
 }
 
-
-
 @media (max-width: 1060px) {
-
-div[class*="SectionOneColumn"] {
-    flex-direction: column;
-}
-
+    div[class*="SectionOneColumn"] {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 932px) {
@@ -1163,9 +1176,9 @@ div[class*="twoColumnLayout-mainColumn"] li.pageBoxNoCompat {
 }
 }
 
-
-
 </style>
+
+
 
 
 
