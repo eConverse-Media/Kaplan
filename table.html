@@ -1,0 +1,108 @@
+<style>
+    /* This media query targets screens 768px wide or smaller */
+    @media (max-width: 768px) {
+
+        /* This CSS targets the WDS Services table specifically */
+        #wds-services-table thead {
+            display: none;
+        }
+
+        #wds-services-table,
+        #wds-services-table tbody,
+        #wds-services-table tr,
+        #wds-services-table td {
+            display: block;
+            width: 100% !important;
+        }
+
+        #wds-services-table tr {
+            margin-bottom: 15px;
+        }
+
+        #wds-services-table td {
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #wds-services-table td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+</style>
+<h3>Web Design Suite Services</h3>
+<table id="wds-services-table" style="width:100%; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th style="width: 33.3333333333%; border: 1px solid #ccc; padding: 8px; text-align: left;">WDS Lite<br> (50
+                points)</th>
+            <th style="width: 33.3333333333%; border: 1px solid #ccc; padding: 8px; text-align: left;">WDS Full<br> (100
+                points)</th>
+            <th style="width: 33.3333333333%; border: 1px solid #ccc; padding: 8px; text-align: left;">Content Population<br> (Contact your advisor)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-label="WDS Lite (50 points)"
+                style="width: 33.3333333333%; border: 1px solid #ccc; padding: 8px; vertical-align: top;">
+                <ul>
+                    <li>Setup of WDS Template</li>
+                    <li>Brand Styling</li>
+                    <li>Sticker Sheet</li>
+                    <li>Ongoing DS support with points</li>
+                </ul>
+            </td>
+            <td data-label="WDS Full (100 points)"
+                style="width: 33.3333333333%; border: 1px solid #ccc; padding: 8px; vertical-align: top;">
+                <ul>
+                    <li>Content population of up to 15 pages</li>
+                    <li>Brand Styling</li>
+                    <li>Setup of WDS Template</li>
+                    <li>Public Homepage Personalized Design</li>
+                    <li>Content Migration</li>
+                    <li>Sticker Sheet</li>
+                    <li>Training</li>
+                    <li>Ongoing DS support with points</li>
+                </ul>
+            </td>
+            <td data-label="Content Population (Contact your advisor)"
+                style="width: 33.3333333333%; border: 1px solid #ccc; padding: 8px; vertical-align: top;">
+                <em>For content migration of more than 15 pages please contact your advisor.</em>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 style="margin-top: 20px;">Community Design</h3>
+<table style="width:100%; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th style="width: 330px; border: 1px solid #ccc; padding: 8px; text-align: left;">Community Design<br> (50
+                points)</th>
+            <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Community Design Full<br> (100 points)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="width: 330px; border: 1px solid #ccc; padding: 8px; vertical-align: top;">
+                <ul>
+                    <li>Public Homepage Design</li>
+                    <li>Member Homepage Design</li>
+                    <li>Sticker Sheet</li>
+                </ul>
+            </td>
+            <td style="border: 1px solid #ccc; padding: 8px; vertical-align: top;">
+                <ul>
+                    <li>Public Homepage Design</li>
+                    <li>Member Homepage Design</li>
+                    <li>Sticker Sheet</li>
+                    <li>Full Design Process of Community Site</li>
+                    <li>Training</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
